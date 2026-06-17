@@ -530,7 +530,7 @@ export default function HairRestorationGoogle() {
             <div>
               <div style={{ borderRadius: 10, overflow: 'hidden', marginBottom: 28 }}>
                 <iframe
-                  src="https://maps.google.com/maps?q=Robotic+Hair+Restoration+of+Long+Island&output=embed&z=15"
+                  src="https://maps.google.com/maps?q=167+Froehlich+Farm+Blvd+Woodbury+NY+11797&output=embed&z=15"
                   width="100%"
                   height="320"
                   style={{ border: 'none', display: 'block' }}
