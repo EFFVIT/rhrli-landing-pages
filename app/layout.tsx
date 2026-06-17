@@ -32,6 +32,12 @@ export const metadata = {
   })(window,document,'script','dataLayer','GTM-WP5S55H');`,
             }}
           />
+          <Script
+            src="https://widgets.leadconnectorhq.com/loader.js"
+            data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+            data-widget-id="668421b21123b130519a8f35"
+            strategy="afterInteractive"
+          />
         </head>
         <body>
           <noscript>
