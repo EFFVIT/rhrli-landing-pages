@@ -3,10 +3,19 @@ import GclidCapture from '@/components/GclidCapture'
 import GhlForm from '@/components/GhlForm'
 import FaqAccordion from '@/components/FaqAccordion'
 
+const OG_IMAGE = 'https://vitalitymmg.com/wp-content/uploads/2026/06/rhrli-og-featured.png'
+
 export const metadata = {
   title: 'Medical Evaluation for Hair Loss | RHRLI — Long Island',
   description:
     'Schedule a doctor-led hair loss evaluation at RHRLI. Discover the cause of your hair loss and learn which treatment options fit your goals.',
+  openGraph: {
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: 'RHRLI — Robotic Hair Restoration of Long Island' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: [OG_IMAGE],
+  },
 }
 
 const NAVY = '#0D1B35'

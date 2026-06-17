@@ -1,6 +1,18 @@
 import Script from 'next/script'
 import './globals.css'
 
+const OG_IMAGE = 'https://vitalitymmg.com/wp-content/uploads/2026/06/rhrli-og-featured.png'
+
+export const metadata = {
+  openGraph: {
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: 'RHRLI — Robotic Hair Restoration of Long Island' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: [OG_IMAGE],
+  },
+}
+
   export default function RootLayout({
     children,
   }: {
