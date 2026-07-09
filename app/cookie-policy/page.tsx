@@ -17,15 +17,15 @@ const NAVY = '#0D1B35'
 const GOLD = '#F0B429'
 const BLUE = '#1B3498'
 const CREAM = '#F4F0EB'
-const LOGO = 'https://start.rhrli.com/wp-content/uploads/2025/12/Group-8-1.png'
+const LOGO_ICON = '/rhrli-icon.png'
+const LOGO_WORDMARK = '/rhrli-wordmark.svg'
 
 export default function CookiePolicy() {
   return (
     <>
       {/* Nav */}
-      <header style={{
+      <header className="site-header" style={{
         background: NAVY,
-        padding: '14px 40px',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -33,19 +33,18 @@ export default function CookiePolicy() {
         top: 0,
         zIndex: 100,
       }}>
-        <a href="/" style={{ display: 'inline-block' }}>
-          <img src={LOGO} alt="RHRLI — Robotic Hair Restoration of Long Island" height={44} />
+        <a href="/" className="site-header-logo" style={{ display: 'flex', alignItems: 'center' }}>
+          <img src={LOGO_ICON} alt="RHRLI" height={40} />
+          <img className="logo-wordmark" src={LOGO_WORDMARK} alt="Robotic Hair Restoration of Long Island" />
         </a>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
-          <a href="tel:5162102369" style={{ color: '#fff', fontWeight: 600, fontSize: '1rem', textDecoration: 'none' }}>
+        <div className="site-header-actions" style={{ display: 'flex', alignItems: 'center' }}>
+          <a className="phone-link" href="tel:5162102369" style={{ color: '#fff', fontWeight: 600, textDecoration: 'none' }}>
             516-210-2369
           </a>
-          <a href="/hair-restoration-google#evaluation" style={{
+          <a className="header-cta" href="/hair-restoration-google#evaluation" style={{
             background: GOLD,
             color: NAVY,
             fontWeight: 700,
-            fontSize: '0.85rem',
-            padding: '10px 20px',
             borderRadius: 24,
             textDecoration: 'none',
             letterSpacing: '0.04em',

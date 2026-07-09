@@ -25,10 +25,11 @@ const GOLD = '#F0B429'
 const CREAM = '#F4F0EB'
 const BLUE = '#1B3498'
 
-const LOGO = 'https://start.rhrli.com/wp-content/uploads/2025/12/Group-8-1.png'
-const HERO_IMG = 'https://start.rhrli.com/wp-content/uploads/2025/12/Gemini_Generated_Image_njainnnjainnnjai-2-2.png'
+const LOGO_ICON = '/rhrli-icon.png'
+const LOGO_WORDMARK = '/rhrli-wordmark.svg'
+const HERO_IMG = '/rhrli-doctor-hero.jpg'
 const DR_IMG = 'https://start.rhrli.com/wp-content/uploads/2026/02/Rectangle-43.png'
-const FINANCE_IMG = 'https://start.rhrli.com/wp-content/uploads/2025/12/Gemini_Generated_Image_njainnnjainnnjai-2-2.png'
+const FINANCE_IMG = '/rhrli-finance.jpg'
 
 // TODO: replace with dedicated RHRLI hair-restoration form IDs in GHL for proper attribution
 const HERO_FORM_ID = 'J6ay2uZfqGOONYO1yJon'
@@ -40,9 +41,8 @@ export default function HairRestorationLP() {
       <Suspense><GclidCapture /></Suspense>
 
       {/* ── Nav ── */}
-      <header style={{
+      <header className="site-header" style={{
         background: NAVY,
-        padding: '14px 40px',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -50,17 +50,18 @@ export default function HairRestorationLP() {
         top: 0,
         zIndex: 100,
       }}>
-        <img src={LOGO} alt="RHRLI — Robotic Hair Restoration of Long Island" height={44} />
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
-          <a href="tel:5162102369" style={{ color: '#fff', fontWeight: 600, fontSize: '1rem', textDecoration: 'none' }}>
+        <div className="site-header-logo" style={{ display: 'flex', alignItems: 'center' }}>
+          <img src={LOGO_ICON} alt="RHRLI" height={40} />
+          <img className="logo-wordmark" src={LOGO_WORDMARK} alt="Robotic Hair Restoration of Long Island" />
+        </div>
+        <div className="site-header-actions" style={{ display: 'flex', alignItems: 'center' }}>
+          <a className="phone-link" href="tel:5162102369" style={{ color: '#fff', fontWeight: 600, textDecoration: 'none' }}>
             516-210-2369
           </a>
-          <a href="#evaluation" style={{
+          <a className="header-cta" href="#evaluation" style={{
             background: GOLD,
             color: NAVY,
             fontWeight: 700,
-            fontSize: '0.85rem',
-            padding: '10px 20px',
             borderRadius: 24,
             textDecoration: 'none',
             letterSpacing: '0.04em',
@@ -72,36 +73,33 @@ export default function HairRestorationLP() {
       </header>
 
       {/* ── Hero ── */}
-      <section style={{ background: NAVY }} className="hero-grid">
-        <div style={{ position: 'relative', overflow: 'hidden', minHeight: 600 }}>
+      <section style={{ background: '#09101f' }} className="hero-section">
+        <div className="hero-grid">
+        <div className="hero-image-card" style={{ position: 'relative', overflow: 'hidden', borderRadius: 20, background: '#15274f' }}>
           <img
             src={HERO_IMG}
             alt="Patient at RHRLI"
-            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '35% 30%', display: 'block' }}
           />
-          <div style={{
+          <div className="hero-badge" style={{
             position: 'absolute',
-            bottom: 24,
-            left: 24,
-            right: 24,
-            background: 'rgba(255,255,255,0.95)',
-            borderRadius: 8,
-            padding: '14px 18px',
+            background: 'rgba(255,255,255,0.06)',
+            border: '1px solid rgba(255,255,255,0.1)',
+            borderRadius: 14,
             display: 'flex',
-            alignItems: 'flex-start',
-            gap: 12,
+            alignItems: 'center',
           }}>
+            <div style={{ color: '#ddb13f', fontSize: '0.75rem', letterSpacing: 2, whiteSpace: 'nowrap' }}>★★★★★</div>
             <div>
-              <div style={{ color: GOLD, fontSize: '1.1rem', letterSpacing: 2, marginBottom: 4 }}>★★★★★</div>
-              <div style={{ fontWeight: 700, color: NAVY, fontSize: '0.9rem' }}>Patient-Centered Care</div>
-              <div style={{ color: '#555', fontSize: '0.82rem', marginTop: 2 }}>
+              <div className="hero-badge-title" style={{ fontWeight: 700, color: '#fff' }}>Patient-Centered Care</div>
+              <div className="hero-badge-desc" style={{ color: 'rgba(255,255,255,0.85)', marginTop: 2 }}>
                 Personalized plans built around your goals and hair biology.
               </div>
             </div>
           </div>
         </div>
 
-        <div style={{ padding: '60px 48px 48px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+        <div className="hero-content-col" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
           <h1 style={{
             color: '#fff',
             fontSize: 'clamp(1.8rem, 3vw, 2.6rem)',
@@ -131,6 +129,7 @@ export default function HairRestorationLP() {
             </p>
             <GhlForm formId={HERO_FORM_ID} height={380} />
           </div>
+        </div>
         </div>
       </section>
 
@@ -214,52 +213,52 @@ export default function HairRestorationLP() {
               {
                 title: 'Designed for Your Pattern and Stage',
                 desc: 'Personalized plans based on your evaluation findings, stage, and goals.',
-                icon: (<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3.5" fill="white"/><path d="M3 18c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="white" strokeWidth="1.8" strokeLinecap="round"/></svg>),
+                icon: (<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 0C8.685 0 6 2.685 6 6C6 9.315 8.685 12 12 12C15.315 12 18 9.315 18 6C18 2.685 15.315 0 12 0ZM0 21V24H24V21C24 17.01 16.005 15 12 15C7.995 15 0 17.01 0 21Z" fill="white"/></svg>),
               },
               {
                 title: 'Visible, Measurable Progress',
                 desc: 'Track changes over time through follow-up assessments.',
-                icon: (<svg width="20" height="20" viewBox="0 0 20 20" fill="white"><rect x="2" y="12" width="4" height="6" rx="0.5"/><rect x="8" y="7" width="4" height="11" rx="0.5"/><rect x="14" y="3" width="4" height="15" rx="0.5"/></svg>),
+                icon: (<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M0 10.2857V24H6V10.2857H0ZM9 0V24H15V0H9ZM18 5.14286V24H24V5.14286H18Z" fill="white"/></svg>),
               },
               {
                 title: 'Guidance Focused on Healthy-Looking Hair',
                 desc: 'Recommendations based on proven medical and appearance-supporting approaches.',
-                icon: (<svg width="20" height="20" viewBox="0 0 20 20" fill="white"><path d="M10 2.5L11.7 8.3L17.5 10L11.7 11.7L10 17.5L8.3 11.7L2.5 10L8.3 8.3L10 2.5Z"/></svg>),
+                icon: (<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8.72727 3.78947L6 10.7368L0 13.8947L6 17.0526L8.72727 24L11.4545 17.0526L17.4545 13.8947L11.4545 10.7368L8.72727 3.78947ZM19.6364 10.1053L21 6.63158L24 5.05263L21 3.47368L19.6364 0L18.2727 3.47368L15.2727 5.05263L18.2727 6.63158L19.6364 10.1053Z" fill="white"/></svg>),
               },
               {
                 title: 'Safe Care. Proven Protocols.',
                 desc: 'Strict standards for consistent, high-quality patient care.',
-                icon: (<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L3.5 5V9.5C3.5 13.4 6.3 17 10 17.9C13.7 17 16.5 13.4 16.5 9.5V5L10 2Z" fill="white"/><path d="M7 10l2 2 4-4" stroke="#0D1B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>),
+                icon: (<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path fillRule="evenodd" clipRule="evenodd" d="M12 0L0 4.36364V10.9091C0 16.9636 5.12 22.6255 12 24C18.88 22.6255 24 16.9636 24 10.9091V4.36364L12 0ZM8.66667 16.5491L4 12.7309L5.45333 11.5418L8.66667 14.1818L18.5467 6.09818L20 7.28727L8.66667 16.5491Z" fill="white"/></svg>),
               },
               {
                 title: 'Tailored to You',
                 desc: 'Your plan is based on your evaluation, goals, and long-term hair needs.',
-                icon: (<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 6h14M3 10h14M3 14h10" stroke="white" strokeWidth="2" strokeLinecap="round"/></svg>),
+                icon: (<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M0 20.5714V24H8V20.5714H0ZM10.6667 20.5714V24H24V20.5714H10.6667ZM0 10.2857V13.7143H13.3333V10.2857H0ZM16 10.2857V13.7143H24V10.2857H16ZM0 0V3.42857H8V0H0ZM10.6667 0V3.42857H24V0H10.6667Z" fill="white"/></svg>),
               },
               {
                 title: 'Trusted by Thousands',
                 desc: 'Real patients. Real reviews. Real experiences.',
-                icon: (<svg width="20" height="20" viewBox="0 0 20 20" fill="white"><path d="M10 2l2.5 6H19l-5.2 3.7 2 6.3L10 14.2 4.2 18l2-6.3L1 8h6.5L10 2Z"/></svg>),
+                icon: (<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 0L15.4484 8.75229L24 8.86239L17.3811 14.7248L19.7811 24L12 19.211L4.21895 24L6.61895 14.7248L0 8.86239L8.55158 8.75229L12 0Z" fill="white"/></svg>),
               },
               {
                 title: 'Step-by-Step Guidance',
                 desc: 'Know what to expect during your evaluation and throughout your care plan.',
-                icon: (<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 6h14M3 10h14M3 14h10" stroke="white" strokeWidth="2" strokeLinecap="round"/></svg>),
+                icon: (<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M1.94595 9.6C0.869189 9.6 0 10.672 0 12C0 13.328 0.869189 14.4 1.94595 14.4C3.0227 14.4 3.89189 13.328 3.89189 12C3.89189 10.672 3.0227 9.6 1.94595 9.6ZM1.94595 0C0.869189 0 0 1.072 0 2.4C0 3.728 0.869189 4.8 1.94595 4.8C3.0227 4.8 3.89189 3.728 3.89189 2.4C3.89189 1.072 3.0227 0 1.94595 0ZM1.94595 19.2C0.869189 19.2 0 20.272 0 21.6C0 22.928 0.869189 24 1.94595 24C3.0227 24 3.89189 22.928 3.89189 21.6C3.89189 20.272 3.0227 19.2 1.94595 19.2ZM5.83784 0.8V4H24V0.8H5.83784ZM5.83784 10.4V13.6H24V10.4H5.83784ZM5.83784 20V23.2H24V20H5.83784Z" fill="white"/></svg>),
               },
               {
-                title: 'ARTAS® iX Robotic Technology Available',
+                title: 'ARTAS® iXi Robotic Technology Available',
                 desc: 'Robotic FUE precision for surgical candidates — discussed during your consultation.',
-                icon: (<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="white" strokeWidth="1.5"/><path d="M6.5 10l2.5 2.5 4.5-4.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>),
+                icon: (<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path fillRule="evenodd" clipRule="evenodd" d="M12 0C5.376 0 0 5.376 0 12C0 18.624 5.376 24 12 24C18.624 24 24 18.624 24 12C24 5.376 18.624 0 12 0ZM9.384 18.864L4.824 14.304L6.6 12.528L9.384 15.324L16.404 8.292L18.18 10.068L9.384 18.864Z" fill="white"/></svg>),
               },
               {
                 title: 'Support When You Need It Most',
                 desc: 'Real guidance through your evaluation, recommendations, and every step of your journey.',
-                icon: (<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="5.5" y="1.5" width="9" height="17" rx="1.5" stroke="white" strokeWidth="1.5"/><circle cx="10" cy="15.5" r="1" fill="white"/></svg>),
+                icon: (<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22.6667 16.6667C21 16.6667 19.4 16.4 17.9067 15.9067C17.44 15.76 16.92 15.8667 16.5467 16.2267L13.6133 19.16C9.84 17.24 6.74667 14.16 4.82667 10.3867L7.76 7.44C8.13333 7.09333 8.24 6.57333 8.09333 6.09333C7.6 4.6 7.33333 3 7.33333 1.33333C7.33333 0.6 6.73333 0 6 0H1.33333C0.6 0 0 0.6 0 1.33333C0 13.8533 10.1467 24 22.6667 24C23.4 24 24 23.4 24 22.6667V18C24 17.2667 23.4 16.6667 22.6667 16.6667Z" fill="white"/></svg>),
               },
               {
                 title: 'Start with a Free Consultation',
                 desc: 'Get answers, options, and a personalized plan — no pressure.',
-                icon: (<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="14" rx="1.5" stroke="white" strokeWidth="1.5"/><path d="M2 9h16" stroke="white" strokeWidth="1.5"/><path d="M7 2v4M13 2v4" stroke="white" strokeWidth="1.5" strokeLinecap="round"/><circle cx="7" cy="13" r="1" fill="white"/><circle cx="13" cy="13" r="1" fill="white"/></svg>),
+                icon: (<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path fillRule="evenodd" clipRule="evenodd" d="M21.6 2.18182H20.4V0H18V2.18182H6V0H3.6V2.18182H2.4C1.08 2.18182 0 3.16364 0 4.36364V21.8182C0 23.0182 1.08 24 2.4 24H21.6C22.92 24 24 23.0182 24 21.8182V4.36364C24 3.16364 22.92 2.18182 21.6 2.18182ZM21.6 21.8182H2.4V7.63636H21.6V21.8182Z" fill="white"/></svg>),
               },
             ] as Array<{ title: string; desc: string; icon: ReactNode }>).map(({ title, desc, icon }, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 16 }}>
@@ -289,13 +288,6 @@ export default function HairRestorationLP() {
               letterSpacing: '0.06em', padding: '14px 32px', borderRadius: 32, textDecoration: 'none',
             }}>
               REQUEST YOUR CONSULTATION
-            </a>
-            <a href="#evaluation" style={{
-              background: 'transparent', color: NAVY, fontWeight: 700, fontSize: '0.85rem',
-              letterSpacing: '0.06em', padding: '14px 32px', borderRadius: 32, textDecoration: 'none',
-              border: `2px solid ${NAVY}`,
-            }}>
-              REQUEST YOUR EVALUATION
             </a>
           </div>
         </div>
@@ -475,7 +467,7 @@ export default function HairRestorationLP() {
                   'Comprehensive evaluation of hair loss patterns and causes',
                   'Personalized care plans built around your goals',
                   'Medical and appearance-supporting options discussed based on your evaluation',
-                  'ARTAS® iX robotic FUE for qualified surgical candidates',
+                  'ARTAS® iXi robotic FUE for qualified surgical candidates',
                 ],
               },
               {
