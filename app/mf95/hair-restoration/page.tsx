@@ -429,20 +429,23 @@ export default function Mf95HairRestorationLP() {
           <h2 style={{ textAlign: 'center', fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 800, color: '#111', marginBottom: 8 }}>
             Real Patients. Real Experiences.
           </h2>
-          <p style={{ textAlign: 'center', color: '#777', marginBottom: 48, fontSize: '0.93rem' }}>
+          <p style={{ textAlign: 'center', color: '#777', marginBottom: 8, fontSize: '0.93rem' }}>
             Verified patient experiences shared after their visit.
+          </p>
+          <p style={{ textAlign: 'center', color: '#999', marginBottom: 48, fontSize: '0.78rem' }}>
+            Individual results may vary.
           </p>
           <div className="reviews-grid">
             <ReviewCard
-              name="Robert Tessoni"
+              name="Robert T."
               text="I recently completed treatment for bladder cancer and noticed significant thinning on the back of my head, so I scheduled a consultation with Dr. Raffi Barsoumian. From the moment I arrived, he was professional, kind, and incredibly honest. He provided a complimentary evaluation and, rather than recommending a service that wasn't appropriate for me, explained that I was not a candidate for the treatments he offers. He then took the time to write down several practical steps I could consider to support my hair health. His honesty, compassion, and genuine desire to help meant a great deal to me. During a time when I felt vulnerable, he made me feel heard and supported. I truly appreciate his integrity and the care he showed throughout my visit."
             />
             <ReviewCard
-              name="Anthony O'Connell"
+              name="Anthony O."
               text="I wanted to share my experience after giving myself time to go through the full recovery process. I had my hair restoration procedure in December, and it is now August. Over time, I've been very pleased with the progress and feel more confident again. Dr. Barsoumian and his staff were outstanding throughout the entire experience, and the care and communication were excellent from start to finish. Friends and family have noticed the change, and I'm grateful for the professionalism and attention I received. I've been documenting my progress monthly and plan to share another update at the one-year mark."
             />
             <ReviewCard
-              name="Luke Martin"
+              name="Luke M."
               text="Robotic Hair Restoration of Long Island provided a very positive experience from start to finish. The team was reassuring in the weeks leading up to my procedure, and a quick call before the appointment helped put me at ease. On the day of the procedure, everything went exactly as it had been explained beforehand. The staff made sure I was comfortable throughout the day, with regular breaks and clear communication. Lunch was provided, and post-procedure instructions were reviewed thoroughly before I went home with the necessary care materials. After the procedure, any questions or concerns I had were answered promptly and in detail. Everyone on the team was attentive and supportive, and I felt well cared for throughout the process. I'm looking forward to continuing to track my progress over the coming months."
             />
           </div>
@@ -599,16 +602,23 @@ export default function Mf95HairRestorationLP() {
         background: '#080f1e',
         color: 'rgba(255,255,255,0.5)',
         textAlign: 'center',
-        padding: '20px',
+        padding: '32px 20px 20px',
         fontSize: '0.8rem',
-        display: 'flex',
-        justifyContent: 'center',
-        gap: 16,
-        flexWrap: 'wrap',
       }}>
-        <span>© 2026 RHRLI</span>
-        <a href="/privacy-policy/" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>PRIVACY POLICY</a>
-        <a href="/cookie-policy/" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>COOKIE POLICY</a>
+        <p style={{ color: 'rgba(255,255,255,0.6)', fontWeight: 600, marginBottom: 4 }}>
+          Robotic Hair Restoration of Long Island
+        </p>
+        <p style={{ marginBottom: 16 }}>
+          167 Froehlich Farm Blvd, Woodbury, NY 11797 &nbsp;·&nbsp; 516-210-2369
+        </p>
+        <p style={{ maxWidth: 640, margin: '0 auto 20px', fontSize: '0.72rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.4)' }}>
+          Individual results vary. This content is for educational purposes only and is not medical advice. Consult a qualified physician before pursuing any medical procedure.
+        </p>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: 16, flexWrap: 'wrap' }}>
+          <span>© 2026 Robotic Hair Restoration of Long Island</span>
+          <a href="/privacy-policy/" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>PRIVACY POLICY</a>
+          <a href="/cookie-policy/" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>COOKIE POLICY</a>
+        </div>
       </footer>
     </>
   )

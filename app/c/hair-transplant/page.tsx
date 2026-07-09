@@ -7,12 +7,12 @@ import ReviewCard from '@/components/ReviewCard'
 const OG_IMAGE = 'https://vitalitymmg.com/wp-content/uploads/2026/06/rhrli-og-featured.png'
 
 export const metadata = {
-  title: 'Hair Transplant Consultation | RHRLI — Long Island',
+  title: 'Hair Transplant Consultation | RHRLI, Long Island',
   description:
     'Schedule a consultation at RHRLI to learn if a hair transplant is right for you. Robotic FUE technology, doctor-led evaluations, Long Island, NY.',
   robots: { index: false, follow: false },
   openGraph: {
-    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: 'RHRLI — Robotic Hair Restoration of Long Island' }],
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: 'RHRLI, Robotic Hair Restoration of Long Island' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -110,7 +110,7 @@ export default function HairTransplantLP() {
             Hair Transplant Consultation on Long Island
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1rem', lineHeight: 1.65, marginBottom: 8 }}>
-            Find out if a hair transplant is the right option for you — including whether robotic FUE with the ARTAS® iXi system fits your goals and donor supply.
+            Find out if a hair transplant is the right option for you, including whether robotic FUE with the ARTAS® iXi system fits your goals and donor supply.
           </p>
           <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.93rem', lineHeight: 1.6, marginBottom: 32 }}>
             Request a consultation to speak directly with Dr. Barsoumian about your candidacy, realistic outcomes, and the full process.
@@ -140,7 +140,7 @@ export default function HairTransplantLP() {
             Your Consultation Is Just Four Steps Away
           </h2>
           <p style={{ textAlign: 'center', color: '#777', marginBottom: 48, fontSize: '0.95rem' }}>
-            It starts with a conversation — not a commitment.
+            It starts with a conversation, not a commitment.
           </p>
 
           <div className="steps-grid">
@@ -148,7 +148,7 @@ export default function HairTransplantLP() {
               { n: '1', title: 'SCHEDULE YOUR CONSULTATION', desc: 'Pick a time that works for you.' },
               { n: '2', title: 'SHARE YOUR GOALS', desc: 'Tell us where you want more density and what concerns you most.' },
               { n: '3', title: 'CANDIDACY ASSESSMENT', desc: 'Dr. Barsoumian evaluates your donor supply and hair loss pattern.' },
-              { n: '4', title: 'PERSONALIZED TREATMENT PLAN', desc: 'Receive a clear plan — options, timeline, and investment — before you decide anything.' },
+              { n: '4', title: 'PERSONALIZED TREATMENT PLAN', desc: 'Receive a clear plan, including options, timeline, and investment, before you decide anything.' },
             ].map(({ n, title, desc }) => (
               <div key={n} style={{ textAlign: 'center', padding: '0 8px' }}>
                 <div style={{
@@ -180,7 +180,7 @@ export default function HairTransplantLP() {
               No pressure. No obligation. Just honest<br />answers about your candidacy.
             </h2>
             <p style={{ color: '#777', marginBottom: 32, fontSize: '0.95rem' }}>
-              Most patients leave the consultation with a clear picture — whether or not they move forward.
+              Most patients leave the consultation with a clear picture, whether or not they move forward.
             </p>
             <a href="#bottom-form" style={{
               display: 'inline-block',
@@ -217,7 +217,7 @@ export default function HairTransplantLP() {
               },
               {
                 title: 'Candid Candidacy Assessments',
-                desc: 'Dr. Barsoumian will tell you if you\'re a strong candidate — and what realistic results look like for your donor supply.',
+                desc: 'Dr. Barsoumian will tell you if you\'re a strong candidate, and what realistic results look like for your donor supply.',
                 icon: (<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M0 10.2857V24H6V10.2857H0ZM9 0V24H15V0H9ZM18 5.14286V24H24V5.14286H18Z" fill="white"/></svg>),
               },
               {
@@ -237,7 +237,7 @@ export default function HairTransplantLP() {
               },
               {
                 title: 'Transparent About Costs and Recovery',
-                desc: 'You\'ll know the full picture — investment, downtime, and timeline — before making any decision.',
+                desc: 'You\'ll know the full picture: investment, downtime, and timeline, before making any decision.',
                 icon: (<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 0L15.4484 8.75229L24 8.86239L17.3811 14.7248L19.7811 24L12 19.211L4.21895 24L6.61895 14.7248L0 8.86239L8.55158 8.75229L12 0Z" fill="white"/></svg>),
               },
               {
@@ -257,7 +257,7 @@ export default function HairTransplantLP() {
               },
               {
                 title: 'Start with a Free Consultation',
-                desc: 'Learn your options, your candidacy, and your investment — no obligation.',
+                desc: 'Learn your options, your candidacy, and your investment, no obligation.',
                 icon: (<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path fillRule="evenodd" clipRule="evenodd" d="M21.6 2.18182H20.4V0H18V2.18182H6V0H3.6V2.18182H2.4C1.08 2.18182 0 3.16364 0 4.36364V21.8182C0 23.0182 1.08 24 2.4 24H21.6C22.92 24 24 23.0182 24 21.8182V4.36364C24 3.16364 22.92 2.18182 21.6 2.18182ZM21.6 21.8182H2.4V7.63636H21.6V21.8182Z" fill="white"/></svg>),
               },
             ] as Array<{ title: string; desc: string; icon: ReactNode }>).map(({ title, desc, icon }, i) => (
@@ -300,7 +300,7 @@ export default function HairTransplantLP() {
             <div style={{ position: 'relative' }}>
               <img
                 src={DR_IMG}
-                alt="Dr. Raffi Barsoumian, MD — Medical Director at RHRLI"
+                alt="Dr. Raffi Barsoumian, MD, Medical Director at RHRLI"
                 style={{ width: '100%', borderRadius: 8, objectFit: 'cover', maxHeight: 500 }}
               />
               <div style={{
@@ -338,7 +338,7 @@ export default function HairTransplantLP() {
                 His training includes a residency completed at Nassau University Medical Center. He has spent his career focused on restoring natural-looking density for men and women across Long Island.
               </p>
               <p style={{ color: 'rgba(255,255,255,0.85)', lineHeight: 1.7, marginBottom: 32, fontSize: '0.95rem' }}>
-                Dr. Barsoumian&apos;s approach is candid: he&apos;ll tell you if you&apos;re a candidate, what a realistic result looks like for your donor supply, and what the full investment — time, recovery, budget — will be before you book.
+                Dr. Barsoumian&apos;s approach is candid: he&apos;ll tell you if you&apos;re a candidate, what a realistic result looks like for your donor supply, and what the full investment (time, recovery, budget) will be before you book.
               </p>
               <a href="#bottom-form" style={{
                 display: 'inline-block',
@@ -429,20 +429,23 @@ export default function HairTransplantLP() {
           <h2 style={{ textAlign: 'center', fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 800, color: '#111', marginBottom: 8 }}>
             Real Patients. Real Experiences.
           </h2>
-          <p style={{ textAlign: 'center', color: '#777', marginBottom: 48, fontSize: '0.93rem' }}>
+          <p style={{ textAlign: 'center', color: '#777', marginBottom: 8, fontSize: '0.93rem' }}>
             Verified patient experiences shared after their visit.
+          </p>
+          <p style={{ textAlign: 'center', color: '#999', marginBottom: 48, fontSize: '0.78rem' }}>
+            Individual results may vary.
           </p>
           <div className="reviews-grid">
             <ReviewCard
-              name="Robert Tessoni"
+              name="Robert T."
               text="I recently completed treatment for bladder cancer and noticed significant thinning on the back of my head, so I scheduled a consultation with Dr. Raffi Barsoumian. From the moment I arrived, he was professional, kind, and incredibly honest. He provided a complimentary evaluation and, rather than recommending a service that wasn't appropriate for me, explained that I was not a candidate for the treatments he offers. He then took the time to write down several practical steps I could consider to support my hair health. His honesty, compassion, and genuine desire to help meant a great deal to me. During a time when I felt vulnerable, he made me feel heard and supported. I truly appreciate his integrity and the care he showed throughout my visit."
             />
             <ReviewCard
-              name="Anthony O'Connell"
+              name="Anthony O."
               text="I wanted to share my experience after giving myself time to go through the full recovery process. I had my hair restoration procedure in December, and it is now August. Over time, I've been very pleased with the progress and feel more confident again. Dr. Barsoumian and his staff were outstanding throughout the entire experience, and the care and communication were excellent from start to finish. Friends and family have noticed the change, and I'm grateful for the professionalism and attention I received. I've been documenting my progress monthly and plan to share another update at the one-year mark."
             />
             <ReviewCard
-              name="Luke Martin"
+              name="Luke M."
               text="Robotic Hair Restoration of Long Island provided a very positive experience from start to finish. The team was reassuring in the weeks leading up to my procedure, and a quick call before the appointment helped put me at ease. On the day of the procedure, everything went exactly as it had been explained beforehand. The staff made sure I was comfortable throughout the day, with regular breaks and clear communication. Lunch was provided, and post-procedure instructions were reviewed thoroughly before I went home with the necessary care materials. After the procedure, any questions or concerns I had were answered promptly and in detail. Everyone on the team was attentive and supportive, and I felt well cared for throughout the process. I'm looking forward to continuing to track my progress over the coming months."
             />
           </div>
@@ -483,7 +486,7 @@ export default function HairTransplantLP() {
                 icon: (<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 16.5C10 16.5 2.5 12 2.5 7A4 4 0 0110 5a4 4 0 017.5 2C17.5 12 10 16.5 10 16.5z" stroke={NAVY} strokeWidth="1.5"/></svg>),
                 title: 'Patient-First Philosophy',
                 bullets: [
-                  'Honest assessments — we only recommend what\'s right for your situation',
+                  'Honest assessments: we only recommend what\'s right for your situation',
                   'Direct communication with Dr. Barsoumian at every step',
                   'Focus on natural-looking, long-term results',
                 ],
@@ -599,16 +602,23 @@ export default function HairTransplantLP() {
         background: '#080f1e',
         color: 'rgba(255,255,255,0.5)',
         textAlign: 'center',
-        padding: '20px',
+        padding: '32px 20px 20px',
         fontSize: '0.8rem',
-        display: 'flex',
-        justifyContent: 'center',
-        gap: 16,
-        flexWrap: 'wrap',
       }}>
-        <span>© 2026 RHRLI</span>
-        <a href="/privacy-policy/" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>PRIVACY POLICY</a>
-        <a href="/cookie-policy/" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>COOKIE POLICY</a>
+        <p style={{ color: 'rgba(255,255,255,0.6)', fontWeight: 600, marginBottom: 4 }}>
+          Robotic Hair Restoration of Long Island
+        </p>
+        <p style={{ marginBottom: 16 }}>
+          167 Froehlich Farm Blvd, Woodbury, NY 11797 &nbsp;·&nbsp; 516-210-2369
+        </p>
+        <p style={{ maxWidth: 640, margin: '0 auto 20px', fontSize: '0.72rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.4)' }}>
+          Individual results vary. This content is for educational purposes only and is not medical advice. Consult a qualified physician before pursuing any medical procedure.
+        </p>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: 16, flexWrap: 'wrap' }}>
+          <span>© 2026 Robotic Hair Restoration of Long Island</span>
+          <a href="/privacy-policy/" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>PRIVACY POLICY</a>
+          <a href="/cookie-policy/" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>COOKIE POLICY</a>
+        </div>
       </footer>
     </>
   )
