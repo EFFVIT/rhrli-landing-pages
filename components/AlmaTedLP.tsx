@@ -135,31 +135,31 @@ export default function AlmaTedLP({ heroFormId, bottomFormId }: Props) {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 20, marginBottom: 32 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 7, fontSize: 13, color: BODY }}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 18 22" fill="none">
-                  <path d="M16.815 11.8136C16.815 16.8128 13.315 19.3124 9.155 20.7621C8.93717 20.8359 8.70054 20.8324 8.485 20.7521C4.315 19.3124 0.815002 16.8128 0.815002 11.8136V4.81478C0.815002 4.54961 0.920359 4.2953 1.1079 4.10779C1.29543 3.92029 1.54979 3.81495 1.815 3.81495C3.815 3.81495 6.315 2.61515 8.055 1.0954C8.26686 0.914434 8.53636 0.815002 8.815 0.815002C9.09365 0.815002 9.36315 0.914434 9.575 1.0954C11.325 2.62515 13.815 3.81495 15.815 3.81495C16.0802 3.81495 16.3346 3.92029 16.5221 4.10779C16.7096 4.2953 16.815 4.54961 16.815 4.81478V11.8136Z" stroke={BLUE} strokeWidth="1.63" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M16.815 11.8136C16.815 16.8128 13.315 19.3124 9.155 20.7621C8.93717 20.8359 8.70054 20.8324 8.485 20.7521C4.315 19.3124 0.815002 16.8128 0.815002 11.8136V4.81478C0.815002 4.54961 0.920359 4.2953 1.1079 4.10779C1.29543 3.92029 1.54979 3.81495 1.815 3.81495C3.815 3.81495 6.315 2.61515 8.055 1.0954C8.26686 0.914434 8.53636 0.815002 8.815 0.815002C9.09365 0.815002 9.36315 0.914434 9.575 1.0954C11.325 2.62515 13.815 3.81495 15.815 3.81495C16.0802 3.81495 16.3346 3.92029 16.5221 4.10779C16.7096 4.2953 16.815 4.54961 16.815 4.81478V11.8136Z" stroke={NAVY} strokeWidth="1.63" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 <span>Licensed medical providers</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 7, fontSize: 13, color: BODY }}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 23 32" fill="none" opacity="0.7">
-                  <path d="M10.8334 10.8563V14.5771" stroke={BLUE} strokeWidth="1.16276" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M12.7501 18.298H8.91672" stroke={BLUE} strokeWidth="1.16276" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M12.7501 22.0187H8.91672" stroke={BLUE} strokeWidth="1.16276" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M12.7501 12.7167H8.91672" stroke={BLUE} strokeWidth="1.16276" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M16.5833 16.4375H18.5C19.0083 16.4375 19.4958 16.6335 19.8553 16.9824C20.2147 17.3313 20.4167 17.8045 20.4167 18.2979V23.8791C20.4167 24.3726 20.2147 24.8458 19.8553 25.1947C19.4958 25.5436 19.0083 25.7396 18.5 25.7396H3.16667C2.65834 25.7396 2.17082 25.5436 1.81138 25.1947C1.45193 24.8458 1.25 24.3726 1.25 23.8791V15.5073C1.25 15.0139 1.45193 14.5407 1.81138 14.1918C2.17082 13.8429 2.65834 13.6469 3.16667 13.6469H5.08333" stroke={BLUE} strokeWidth="1.16276" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M16.5834 25.7396V8.99585C16.5834 8.50244 16.3814 8.02924 16.022 7.68034C15.6626 7.33144 15.175 7.13544 14.6667 7.13544H7.00004C6.49171 7.13544 6.0042 7.33144 5.64475 7.68034C5.28531 8.02924 5.08337 8.50244 5.08337 8.99585V25.7396" stroke={BLUE} strokeWidth="1.16276" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M10.8334 10.8563V14.5771" stroke={NAVY} strokeWidth="1.16276" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M12.7501 18.298H8.91672" stroke={NAVY} strokeWidth="1.16276" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M12.7501 22.0187H8.91672" stroke={NAVY} strokeWidth="1.16276" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M12.7501 12.7167H8.91672" stroke={NAVY} strokeWidth="1.16276" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M16.5833 16.4375H18.5C19.0083 16.4375 19.4958 16.6335 19.8553 16.9824C20.2147 17.3313 20.4167 17.8045 20.4167 18.2979V23.8791C20.4167 24.3726 20.2147 24.8458 19.8553 25.1947C19.4958 25.5436 19.0083 25.7396 18.5 25.7396H3.16667C2.65834 25.7396 2.17082 25.5436 1.81138 25.1947C1.45193 24.8458 1.25 24.3726 1.25 23.8791V15.5073C1.25 15.0139 1.45193 14.5407 1.81138 14.1918C2.17082 13.8429 2.65834 13.6469 3.16667 13.6469H5.08333" stroke={NAVY} strokeWidth="1.16276" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M16.5834 25.7396V8.99585C16.5834 8.50244 16.3814 8.02924 16.022 7.68034C15.6626 7.33144 15.175 7.13544 14.6667 7.13544H7.00004C6.49171 7.13544 6.0042 7.33144 5.64475 7.68034C5.28531 8.02924 5.08337 8.50244 5.08337 8.99585V25.7396" stroke={NAVY} strokeWidth="1.16276" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 <span>In-office care</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 7, fontSize: 13, color: BODY }}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 15 20" fill="none" opacity="0.7">
-                  <path d="M12.5 7L5.625 13.8L2.5 10.7" stroke={BLUE} strokeWidth="1.65" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M12.5 7L5.625 13.8L2.5 10.7" stroke={NAVY} strokeWidth="1.65" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 <span>No surgery &bull; No injections</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 7, fontSize: 13, color: BODY }}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="18" viewBox="0 0 19 30" fill="none" opacity="0.7">
-                  <path d="M14.3858 10.0401C14.3858 14.0064 10.0007 18.1371 8.52824 19.4129C8.39106 19.5164 8.22408 19.5724 8.05245 19.5724C7.88082 19.5724 7.71383 19.5164 7.57666 19.4129C6.10416 18.1371 1.71912 14.0064 1.71912 10.0401C1.71912 8.3547 2.38638 6.7383 3.57411 5.5465C4.76184 4.3547 6.37274 3.6852 8.05245 3.6852C9.73215 3.6852 11.3431 4.3547 12.5308 5.5465C13.7185 6.7383 14.3858 8.3547 14.3858 10.0401Z" stroke={BLUE} strokeWidth="0.9" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M8.05243 12.4233C9.36411 12.4233 10.4274 11.3564 10.4274 10.0402C10.4274 8.7241 9.36411 7.6571 8.05243 7.6571C6.74075 7.6571 5.67743 8.7241 5.67743 10.0402C5.67743 11.3564 6.74075 12.4233 8.05243 12.4233Z" stroke={BLUE} strokeWidth="0.9" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M14.3858 10.0401C14.3858 14.0064 10.0007 18.1371 8.52824 19.4129C8.39106 19.5164 8.22408 19.5724 8.05245 19.5724C7.88082 19.5724 7.71383 19.5164 7.57666 19.4129C6.10416 18.1371 1.71912 14.0064 1.71912 10.0401C1.71912 8.3547 2.38638 6.7383 3.57411 5.5465C4.76184 4.3547 6.37274 3.6852 8.05245 3.6852C9.73215 3.6852 11.3431 4.3547 12.5308 5.5465C13.7185 6.7383 14.3858 8.3547 14.3858 10.0401Z" stroke={NAVY} strokeWidth="0.9" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M8.05243 12.4233C9.36411 12.4233 10.4274 11.3564 10.4274 10.0402C10.4274 8.7241 9.36411 7.6571 8.05243 7.6571C6.74075 7.6571 5.67743 8.7241 5.67743 10.0402C5.67743 11.3564 6.74075 12.4233 8.05243 12.4233Z" stroke={NAVY} strokeWidth="0.9" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 <span>Long Island, NY</span>
               </div>
@@ -184,7 +184,7 @@ export default function AlmaTedLP({ heroFormId, bottomFormId }: Props) {
       </section>
 
       {/* Problem */}
-      <section ref={problemReveal.ref} className={problemReveal.className} style={{ background: BLUE, padding: '60px 24px', textAlign: 'center' }}>
+      <section ref={problemReveal.ref} className={problemReveal.className} style={{ background: NAVY, padding: '60px 24px', textAlign: 'center' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <h2 style={{ fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#fff', margin: '0 0 24px', lineHeight: 1.25 }}>
             Concerned About Hair Thinning, But Not Ready for Surgery or Injections?
@@ -213,9 +213,9 @@ export default function AlmaTedLP({ heroFormId, bottomFormId }: Props) {
             </p>
             <div style={{ background: '#f9f9f9', border: '2px solid #dfdfdf', borderRadius: 10, padding: '16px 20px', display: 'flex', gap: 10, alignItems: 'flex-start' }}>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" style={{ flexShrink: 0, marginTop: 1 }}>
-                <path d="M10 18.3333C14.6024 18.3333 18.3333 14.6023 18.3333 9.99996C18.3333 5.39759 14.6024 1.66663 10 1.66663C5.39763 1.66663 1.66667 5.39759 1.66667 9.99996C1.66667 14.6023 5.39763 18.3333 10 18.3333Z" stroke={BLUE} strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M10 13.3333V10" stroke={BLUE} strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M10 6.66663H10.0083" stroke={BLUE} strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M10 18.3333C14.6024 18.3333 18.3333 14.6023 18.3333 9.99996C18.3333 5.39759 14.6024 1.66663 10 1.66663C5.39763 1.66663 1.66667 5.39759 1.66667 9.99996C1.66667 14.6023 5.39763 18.3333 10 18.3333Z" stroke={NAVY} strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M10 13.3333V10" stroke={NAVY} strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M10 6.66663H10.0083" stroke={NAVY} strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
               <p style={{ margin: 0, fontSize: 14, color: HEADING, lineHeight: 1.6 }}>
                 A consultation with a licensed medical professional is required to determine whether this option is appropriate for you.
@@ -273,7 +273,7 @@ export default function AlmaTedLP({ heroFormId, bottomFormId }: Props) {
       </section>
 
       {/* Is This Option Right for You */}
-      <section ref={rightForYouReveal.ref} className={rightForYouReveal.className} style={{ background: BLUE, padding: '60px 24px', textAlign: 'center' }}>
+      <section ref={rightForYouReveal.ref} className={rightForYouReveal.className} style={{ background: NAVY, padding: '60px 24px', textAlign: 'center' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <h2 style={{ fontSize: 'clamp(22px, 3vw, 32px)', fontWeight: 800, color: '#fff', margin: '0 0 12px' }}>
             Is This Option Right for You?
@@ -378,7 +378,7 @@ export default function AlmaTedLP({ heroFormId, bottomFormId }: Props) {
             <h2 style={{ fontSize: 'clamp(20px, 2.5vw, 26px)', fontWeight: 800, color: HEADING, margin: '0 0 4px' }}>
               Dr. Raffi Barsoumian
             </h2>
-            <p style={{ fontSize: 15, fontWeight: 600, color: BLUE, margin: '0 0 20px' }}>
+            <p style={{ fontSize: 15, fontWeight: 600, color: NAVY, margin: '0 0 20px' }}>
               Double Fellowship Trained Surgeon Specializing in Hair Restoration
             </p>
             <p style={{ fontSize: 15, color: BODY, margin: '0 0 20px' }}>
@@ -459,7 +459,7 @@ export default function AlmaTedLP({ heroFormId, bottomFormId }: Props) {
       {/* Footer */}
       <footer style={{ background: '#fff', borderTop: '1px solid #E5E7EB', padding: '40px 24px 24px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: 48, marginBottom: 28, alignItems: 'start' }}>
+          <div className="footer-grid" style={{ marginBottom: 28 }}>
             <div>
               <p style={{ fontSize: 12, color: '#475467', lineHeight: 1.65, margin: '0 0 8px', maxWidth: 560 }}>
                 This service is provided in-office by licensed medical professionals. This non-invasive service is designed to support scalp health and address concerns related to hair thinning. Individual experiences may vary. A consultation is required to determine suitability.
