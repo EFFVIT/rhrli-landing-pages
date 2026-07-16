@@ -1,6 +1,5 @@
 import { Suspense, type ReactNode } from 'react'
 import GclidCapture from '@/components/GclidCapture'
-import GhlForm from '@/components/GhlForm'
 import FaqAccordion from '@/components/FaqAccordion'
 import ReviewCard from '@/components/ReviewCard'
 
@@ -31,8 +30,6 @@ const HERO_IMG = '/rhrli-doctor-hero.jpg'
 const DR_IMG = 'https://start.rhrli.com/wp-content/uploads/2026/02/Rectangle-43.png'
 const FINANCE_IMG = '/rhrli-finance.jpg'
 
-// TODO: replace with dedicated RHRLI hair-transplant form IDs in GHL for proper attribution
-const BOTTOM_FORM_ID = 'aoRhRqF9g0OrWyz6y6iY'
 
 export default function HairTransplantLP() {
   return (
@@ -608,7 +605,25 @@ export default function HairTransplantLP() {
               <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8rem', textAlign: 'center', marginBottom: 20 }}>
                 No obligation &nbsp;·&nbsp; Private &nbsp;·&nbsp; Doctor-led
               </p>
-              <GhlForm formId={BOTTOM_FORM_ID} height={500} />
+              <iframe
+                src="https://api.leadconnectorhq.com/widget/form/aoRhRqF9g0OrWyz6y6iY"
+                style={{ width: '100%', height: '100%', border: 'none', borderRadius: '0px' }}
+                id="inline-aoRhRqF9g0OrWyz6y6iY"
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="Footer Form - Hair Restoration Google"
+                data-height="1571"
+                data-layout-iframe-id="inline-aoRhRqF9g0OrWyz6y6iY"
+                data-form-id="aoRhRqF9g0OrWyz6y6iY"
+                title="Footer Form - Hair Restoration Google"
+              />
+              {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+              <script src="https://link.msgsndr.com/js/form_embed.js" />
             </div>
           </div>
         </div>
