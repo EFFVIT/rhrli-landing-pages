@@ -35,6 +35,23 @@ export default function GhlForm({ formId, height = 620 }: { formId: string; heig
       }
     })
 
+    // Braid click IDs — slugs match their params exactly, unlike gclid below
+    ;['gbraid', 'wbraid'].forEach(key => {
+      const val = urlParams.get(key) || sessionStorage.getItem(key)
+      if (val) {
+        sessionStorage.setItem(key, val)
+        out.set(key, val)
+      }
+    })
+
+    // The form's gclid custom field was created with key "gclid-of", so GHL's
+    // hidden-field prefill never matches the standard ?gclid= param — alias it.
+    const g = out.get('gclid')
+    if (g) {
+      out.set('gclid-of', g)
+      out.set('gclidof', g)
+    }
+
     if (out.toString()) {
       setSrc(`https://api.leadconnectorhq.com/widget/form/${formId}?${out.toString()}`)
     }
