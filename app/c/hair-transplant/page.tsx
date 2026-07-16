@@ -32,7 +32,6 @@ const DR_IMG = 'https://start.rhrli.com/wp-content/uploads/2026/02/Rectangle-43.
 const FINANCE_IMG = '/rhrli-finance.jpg'
 
 // TODO: replace with dedicated RHRLI hair-transplant form IDs in GHL for proper attribution
-const HERO_FORM_ID = 'J6ay2uZfqGOONYO1yJon'
 const BOTTOM_FORM_ID = 'aoRhRqF9g0OrWyz6y6iY'
 
 export default function HairTransplantLP() {
@@ -127,7 +126,25 @@ export default function HairTransplantLP() {
             <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8rem', textAlign: 'center', marginBottom: 16 }}>
               No obligation &nbsp;·&nbsp; Private &nbsp;·&nbsp; Doctor-led
             </p>
-            <GhlForm formId={HERO_FORM_ID} height={380} />
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/J6ay2uZfqGOONYO1yJon"
+              style={{ width: '100%', height: '100%', border: 'none', borderRadius: '0px' }}
+              id="inline-J6ay2uZfqGOONYO1yJon"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Request Your Hair Consultation - Hair Restoration Google"
+              data-height="1510"
+              data-layout-iframe-id="inline-J6ay2uZfqGOONYO1yJon"
+              data-form-id="J6ay2uZfqGOONYO1yJon"
+              title="Request Your Hair Consultation - Hair Restoration Google"
+            />
+            {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+            <script src="https://link.msgsndr.com/js/form_embed.js" />
           </div>
         </div>
         </div>
