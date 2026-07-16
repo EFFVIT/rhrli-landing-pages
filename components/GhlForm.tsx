@@ -72,6 +72,10 @@ export default function GhlForm({ formId, height = 620 }: { formId: string; heig
         id={iframeId}
         onLoad={initResize}
       />
+      <Script
+        src="https://link.msgsndr.com/js/form_embed.js"
+        strategy="afterInteractive"
+      />
     </>
   )
 }
