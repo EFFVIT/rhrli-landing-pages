@@ -1,5 +1,6 @@
 import Script from 'next/script'
 import DniSwap from '@/components/DniSwap'
+import Fab from '@/components/fab/Fab'
 import './globals.css'
 
 const OG_IMAGE = 'https://vitalitymmg.com/wp-content/uploads/2026/06/rhrli-og-featured.png'
@@ -48,6 +49,7 @@ export const metadata = {
         </head>
         <body>
           <DniSwap />
+          <Fab client="rhrli" />
           <noscript>
             <iframe
               src="https://www.googletagmanager.com/ns.html?id=GTM-WP5S55H"
