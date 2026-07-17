@@ -5,9 +5,9 @@ import GclidCapture from '@/components/GclidCapture'
 import { useReveal } from '@/lib/useReveal'
 
 // Recreation of start.rhrli.com/meta/ (paid-social consult LP) on the fleet.
-// Consult-first (Layer 1). Compliance pass applied: source second-person body
-// language ("evaluate your hair loss") neutralized to candidacy framing (FM2).
-// No Meta pixel on this page — medical form page, H-26; attribution via CAPI.
+// Verbatim recreation per Joe's directive (Meta ad-policy softening waived —
+// Meta doesn't enforce it). The ONE carve-out kept is HIPAA: no browser Meta
+// pixel on this health-intent form page (attribution rides server-side CAPI).
 
 const PHONE = '(516) 357-5840'
 const PHONE_HREF = 'tel:5163575840'
@@ -47,7 +47,7 @@ export default function RhrliMetaLP({
   bottomFormId,
   eyebrow = 'Private Medical Consultation',
   heroHeadline = 'See If Hair Restoration Is Right For You—Before You Commit to Surgery',
-  heroSub = 'A private, personalized consultation to review your goals, treatment options, and expected results—guided by experienced medical professionals.',
+  heroSub = 'A private, personalized consultation to evaluate your hair loss, treatment options, and expected results—guided by experienced medical professionals.',
 }: Props) {
   const heroReveal = useReveal<HTMLElement>()
   const doctorReveal = useReveal<HTMLElement>()
