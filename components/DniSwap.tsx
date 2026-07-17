@@ -105,8 +105,19 @@ export default function DniSwap() {
               exp: Date.now() + (lease.ttlSeconds ?? 1800) * 1000,
             }))
             swapNumber(lease.number)
-            // catch late-rendering client components (accordions, reviews)
-            setTimeout(() => swapNumber(lease.number), 1500)
+            // React re-renders (accordions, carousels) restore the static
+            // number from their own props — watch and re-apply. The swap is
+            // idempotent (swapped text no longer matches), so the observer
+            // can't loop on its own mutations.
+            let pending: number | null = null
+            const observer = new MutationObserver(() => {
+              if (pending) return
+              pending = window.setTimeout(() => {
+                pending = null
+                swapNumber(lease.number)
+              }, 250)
+            })
+            observer.observe(document.body, { childList: true, subtree: true, characterData: true })
           }
         })
         .catch(() => { /* static number stays — correct fallback */ })
