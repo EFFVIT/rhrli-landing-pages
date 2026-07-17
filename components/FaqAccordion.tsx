@@ -24,11 +24,11 @@ const faqs = [
   },
 ]
 
-export default function FaqAccordion() {
+export default function FaqAccordion({ items = faqs }: { items?: { q: string; a: string }[] }) {
   const [open, setOpen] = useState<number | null>(null)
   return (
     <div>
-      {faqs.map((item, i) => (
+      {items.map((item, i) => (
         <div key={i} style={{ borderBottom: '1px solid #E5E7EB' }}>
           <button
             onClick={() => setOpen(open === i ? null : i)}
