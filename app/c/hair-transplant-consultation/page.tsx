@@ -4,7 +4,7 @@ import GhlForm from '@/components/GhlForm'
 import FaqAccordion from '@/components/FaqAccordion'
 import ReviewCard from '@/components/ReviewCard'
 
-const OG_IMAGE = 'https://vitalitymmg.com/wp-content/uploads/2026/06/rhrli-og-featured.png'
+const OG_IMAGE = 'https://more.rhrli.com/og/c-hair-transplant-consultation.webp'
 
 export const metadata = {
   title: 'FUE Hair Transplant on Long Island | RHRLI',

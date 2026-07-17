@@ -3,7 +3,7 @@ import GclidCapture from '@/components/GclidCapture'
 import FaqAccordion from '@/components/FaqAccordion'
 import ReviewCard from '@/components/ReviewCard'
 
-const OG_IMAGE = 'https://vitalitymmg.com/wp-content/uploads/2026/06/rhrli-og-featured.png'
+const OG_IMAGE = 'https://more.rhrli.com/og/c-hair-transplant.webp'
 
 export const metadata = {
   title: 'Hair Transplant Consultation | RHRLI, Long Island',
