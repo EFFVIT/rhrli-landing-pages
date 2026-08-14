@@ -318,7 +318,8 @@ export default function ConsultFunnel() {
                 ))}
               </div>
 
-              <button type="button" className="scale-unsure" aria-pressed={v.pattern === 'unsure'}
+              <button type="button" className="scale-unsure" data-choice="unsure"
+                      aria-pressed={v.pattern === 'unsure'}
                       onClick={() => { set('pattern', 'unsure'); set('pattern_label', 'Not sure') }}>
                 <b>I’m not sure</b>
                 <span>Have all four zones mapped and decide nothing in advance. This is a normal answer.</span>
@@ -345,13 +346,13 @@ export default function ConsultFunnel() {
               <h2 className="step-title">In person or virtual?</h2>
               <p className="step-note">Same clinician, same hour, either way.</p>
               <div className="formats">
-                <button type="button" aria-pressed={v.format === 'in-person'}
+                <button type="button" data-choice="in-person" aria-pressed={v.format === 'in-person'}
                         onClick={() => { set('format', 'in-person'); set('format_label', 'In person') }}>
                   <span className="ft">In person</span>
                   <span className="fs">Density counted under magnification and photographed under standardised light, so the reading is a measurement rather than an estimate.</span>
                   <span className="fbadge">Includes the instrument reading</span>
                 </button>
-                <button type="button" aria-pressed={v.format === 'virtual'}
+                <button type="button" data-choice="virtual" aria-pressed={v.format === 'virtual'}
                         onClick={() => { set('format', 'virtual'); set('format_label', 'Virtual') }}>
                   <span className="ft">Virtual</span>
                   <span className="fs">The full hour by video, wherever you are, with the same written summary at the end and a clear next step.</span>
@@ -377,7 +378,8 @@ export default function ConsultFunnel() {
               {slots && slots.length > 0 && (
                 <div className="slots">
                   {slots.slice(0, 12).map((s) => (
-                    <button key={s.iso} type="button" className="slot" aria-pressed={v.slot === s.iso}
+                    <button key={s.iso} type="button" className="slot" data-choice={s.iso}
+                            aria-pressed={v.slot === s.iso}
                             onClick={() => { set('slot', s.iso); set('slot_label', `${s.day}, ${s.time}`) }}>
                       <span className="day">{s.day}</span>
                       <span className="hour">{s.time}</span>
