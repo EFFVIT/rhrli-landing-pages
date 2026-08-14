@@ -15,7 +15,6 @@
    capture and does not fork the shared hook.
    ========================================================================== */
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { trackBookingComplete } from './GaTag'
 
 const TRACKED = [
   'gclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content',
@@ -180,7 +179,19 @@ export default function ConsultFunnel() {
         }),
       })
       const d = await r.json()
-      if (r.ok && d.booked) { trackBookingComplete(); return setGate('done') }
+      if (r.ok && d.booked) {
+        /* Stash the summary, then navigate. A real /c/consult/thank-you URL
+           gives GA4 a genuine destination conversion instead of a virtual
+           page_view, and gives the visitor a page worth landing on. */
+        try {
+          sessionStorage.setItem('consult_booking', JSON.stringify({
+            name: v.first_name, email: v.email, format: v.format,
+            slot: v.slot_label, pattern: v.pattern_label,
+          }))
+        } catch {}
+        window.location.assign('/c/consult/thank-you')
+        return
+      }
       setVErr(d?.message || 'That code did not match. Check the text and try again.')
       setCode(['', '', '', '']); otpRefs.current[0]?.focus()
     } catch {
