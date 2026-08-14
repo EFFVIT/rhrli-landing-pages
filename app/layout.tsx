@@ -32,11 +32,20 @@ export const metadata = {
             id="gtm-script"
             strategy="afterInteractive"
             dangerouslySetInnerHTML={{
-              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              /* HEALTH-INTENT ROUTE EXCLUSION (H-26 / §6 failure mode 7).
+                 /c/consult collects a hair-loss pattern selection and prior-procedure
+                 answer as FIRST-PARTY DOM, not inside a cross-origin GHL iframe. This
+                 container was measured live on 2026-08-14 loading GA4, legacy UA,
+                 DoubleClick remarketing and Microsoft Clarity session recording — and
+                 Clarity can read first-party inputs. On the iframe pages it cannot; that
+                 is an accident of the embed, not a control. So GTM does not load here.
+                 The <noscript> fallback below is deliberately left alone: with JS off the
+                 funnel cannot run at all, so no health-intent input exists to leak. */
+              __html: `if(!/^\\/c\\/consult(\\/|$)/.test(location.pathname)){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-WP5S55H');`,
+  })(window,document,'script','dataLayer','GTM-WP5S55H');}`,
             }}
           />
           <Script
