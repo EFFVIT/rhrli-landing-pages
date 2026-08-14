@@ -391,7 +391,7 @@ export default function ConsultFunnel() {
 
           <div className="actions">
             <button className="btn primary" type="button" disabled={!ready || busy} onClick={advance}>
-              {step === STEPS.length - 1 ? 'Schedule your consult' : 'Continue'}
+              {step === 0 || step === STEPS.length - 1 ? 'Schedule your consult' : 'Continue'}
             </button>
             {step > 0 && (
               <button className="btn ghost" type="button" onClick={() => setStep((s) => s - 1)}>Back</button>
