@@ -36,8 +36,8 @@ type Slot = { iso: string; day: string; time: string }
 type Values = Record<string, string>
 
 const PRACTICE = 'Robotic Hair Restoration of Long Island'
-const PHONE_DISPLAY = '(516) 605-1545'
-const PHONE_RAW = '+15166051545'
+const PHONE_DISPLAY = '(516) 210-2369'   // DNI pool default; DniSwap rewrites it
+const PHONE_RAW = '+15162102369'
 
 export default function ConsultFunnel() {
   const [step, setStep] = useState(0)
@@ -263,7 +263,7 @@ export default function ConsultFunnel() {
 
           {STEPS[step].id === 'contact' && (
             <div>
-              <h2 className="step-title">Start here.</h2>
+              <h2 className="step-title">Schedule your consult.</h2>
               <p className="step-note">Five fields. No health question on this screen, and nothing typed here reaches an advertising platform.</p>
               <div className="stack">
                 <div className="row two">
@@ -364,10 +364,10 @@ export default function ConsultFunnel() {
 
           {STEPS[step].id === 'time' && (
             <div>
-              <h2 className="step-title">Pick your hour.</h2>
+              <h2 className="step-title">Pick your time.</h2>
               <p className="step-note">
-                One hour per evaluation, <b>{v.format === 'virtual' ? 'virtual' : 'in person'}</b>.
-                Move it or cancel it any time, at no cost.
+                <b>{v.format === 'virtual' ? 'Virtual' : 'In-person'}</b> consults run Monday to
+                Friday and select Saturdays. Move it or cancel it any time, at no cost.
               </p>
               {slotsError && <p className="otp-msg" role="alert">{slotsError}</p>}
               {!slots && !slotsError && <p className="step-hint">Loading live availability…</p>}
@@ -391,7 +391,7 @@ export default function ConsultFunnel() {
 
           <div className="actions">
             <button className="btn primary" type="button" disabled={!ready || busy} onClick={advance}>
-              {step === STEPS.length - 1 ? 'Confirm appointment' : 'Continue'}
+              {step === STEPS.length - 1 ? 'Schedule your consult' : 'Continue'}
             </button>
             {step > 0 && (
               <button className="btn ghost" type="button" onClick={() => setStep((s) => s - 1)}>Back</button>

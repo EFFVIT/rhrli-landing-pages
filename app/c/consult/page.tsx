@@ -11,8 +11,11 @@ import './consult.css'
 const PRACTICE = 'Robotic Hair Restoration of Long Island'
 const ADDRESS = '366 North Broadway'
 const CITY = 'Jericho, NY 11753'
-const PHONE_DISPLAY = '(516) 605-1545'
-const PHONE_RAW = '+15166051545'
+/* DNI pool default. DniSwap only rewrites numbers matching 5162102369, so the
+   practice's static GHL line would display untracked and never swap. Verified
+   live: no gclid -> 516-210-2369; with a gclid -> a leased pool number. */
+const PHONE_DISPLAY = '(516) 210-2369'
+const PHONE_RAW = '+15162102369'
 
 export const metadata: Metadata = {
   title: `Book a consultation | ${PRACTICE}`,
@@ -31,7 +34,6 @@ export default function ConsultPage() {
       <header className="masthead">
         <div className="mark">{PRACTICE}</div>
         <div className="mast-meta">
-          <a className="home" href="https://rhrli.com/">Back to site</a>
           {/* DniSwap is already mounted in the root layout and rewrites this
               number and its tel: href when a gclid session is present. */}
           <a className="tel" href={`tel:${PHONE_RAW}`}>{PHONE_DISPLAY}</a>
@@ -41,11 +43,12 @@ export default function ConsultPage() {
       <main className="shell">
         <section className="pitch">
           <h1 className="statement" style={{ marginTop: 0 }}>
-            One specialty. One surgeon. <em>One room.</em>
+            A practice with one tool has <em>one answer for everyone.</em>
           </h1>
           <p className="saystill">
-            An hour, in Jericho or by video. <b>Density measured across four zones</b>, photographed
-            under standardised light, and written up the same day for you to take with you.
+            Dr. Barsoumian keeps six. <b>Your plan gets built around the person you’re becoming</b>,
+            not around the one machine in the room — which is the whole reason the consult starts
+            with measuring rather than recommending.
           </p>
 
           {/* Practice photographs supplied by RHRLI 2026-08-14. No before/after
@@ -70,9 +73,9 @@ export default function ConsultPage() {
               <dd>{ADDRESS}<small>{CITY}</small></dd>
             </div>
             <div>
-              <dt>The hour</dt>
-              <dd>Examination, photographs, a written reading
-                <small>Nothing is quoted, scheduled or sold at the evaluation.</small>
+              <dt>When</dt>
+              <dd>Monday to Friday, and select Saturdays
+                <small>Virtual or in person. Nothing is quoted, scheduled or sold at the consult.</small>
               </dd>
             </div>
           </dl>
