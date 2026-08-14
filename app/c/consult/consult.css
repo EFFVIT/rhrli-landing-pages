@@ -1,12 +1,9 @@
-/* Consult funnel styles. Generated from the approved comp; every selector is
-   scoped under #consult so this route cannot leak into the rest of the app. */
-#consult /* ============================================================================
-   CONSULT FUNNEL BASE
-   Reset + form primitives + step machinery. Everything here reads tokens.
-   A template overrides tokens and adds its world; it never rewrites this.
-   ========================================================================== */
-
-*, #consult *::before, #consult *::after{ box-sizing: border-box; }
+/* Consult funnel styles, generated from the approved comp and rethemed to
+   RHRLI's locked palette. Every selector is scoped under #consult.
+   Comments are stripped before scoping: a comment left ahead of a rule
+   becomes part of its selector, which is how :root once became the
+   never-matching '#consult :root' and left every token undefined. */
+#consult *, #consult *::before, #consult *::after{ box-sizing: border-box; }
 #consult{ -webkit-text-size-adjust: 100%; }
 #consult{ margin: 0; }
 #consult img, #consult svg{ display: block; max-width: 100%; }
@@ -32,8 +29,7 @@
   transition: top .18s ease;
 }
 #consult .skip:focus{ top: 12px; }
-#consult /* ---- step machine ------------------------------------------------------ */
-[data-step][hidden]{ display: none; }
+#consult [data-step][hidden]{ display: none; }
 @media (prefers-reduced-motion: no-preference){#consult [data-step][data-active] > *{
     animation: stepIn .5s cubic-bezier(.16,1,.3,1) both;
   }
@@ -43,8 +39,7 @@
 #consult [data-step][data-active="back"] > *{ animation-name: stepBack; }
 @keyframes stepIn{ from { opacity: 0; transform: translateY(10px); filter: blur(4px); } }
 @keyframes stepBack{ from { opacity: 0; transform: translateY(-8px); filter: blur(4px); } }}
-#consult /* ---- field primitives -------------------------------------------------- */
-.field{ position: relative; display: block; }
+#consult .field{ position: relative; display: block; }
 #consult .field label{
   display: block;
   font-size: 12px;
@@ -60,7 +55,7 @@
   border: var(--field-border, 1px solid var(--rule));
   border-radius: var(--field-radius, 4px);
   color: var(--ink);
-  font-size: 16px; /* never below 16 or iOS zooms on focus */
+  font-size: 16px; 
   line-height: 1.35;
   transition: border-color .16s ease, box-shadow .16s ease, background-color .16s ease;
 }
@@ -94,8 +89,7 @@
 @media (prefers-reduced-motion: reduce){#consult [data-field][data-state="valid"]::after{ animation: none; }}
 #consult .row{ display: grid; gap: var(--gap, 14px); }
 @media (min-width: 560px){#consult .row.two{ grid-template-columns: 1fr 1fr; }}
-#consult /* ---- choices ----------------------------------------------------------- */
-[data-choice]{
+#consult [data-choice]{
   text-align: left;
   border: var(--field-border, 1px solid var(--rule));
   background: var(--field-bg, #fff);
@@ -109,8 +103,7 @@
   background: var(--choice-on, color-mix(in srgb, var(--signal) 8%, #fff));
   box-shadow: inset 0 0 0 1px var(--signal);
 }
-#consult /* ---- consent ----------------------------------------------------------- */
-.consent{ display: grid; grid-template-columns: 22px 1fr; gap: 12px; align-items: start; }
+#consult .consent{ display: grid; grid-template-columns: 22px 1fr; gap: 12px; align-items: start; }
 #consult .consent input{
   appearance: none; width: 22px; height: 22px; margin: 2px 0 0;
   border: 1.5px solid var(--rule-strong, var(--ink));
@@ -127,8 +120,7 @@
 #consult .consent input:checked::after{ transform: rotate(-45deg) scale(1); }
 #consult .consent p{ font-size: 12.5px; line-height: 1.55; color: var(--muted); }
 #consult .consent a{ color: var(--ink); text-underline-offset: 2px; }
-#consult /* ---- buttons ----------------------------------------------------------- */
-.btn{
+#consult .btn{
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   padding: var(--btn-pad, 16px 28px);
   border-radius: var(--btn-radius, 4px);
@@ -140,9 +132,7 @@
 #consult .btn.primary:active:not(:disabled){ transform: translateY(1px); }
 #consult .btn.ghost{ background: transparent; color: var(--muted); }
 #consult .btn.ghost:hover{ color: var(--ink); }
-#consult /* A disabled primary must read as inert, #consult not as a pale version of itself.
-   Fading the signal colour produces a tint that still looks pressable. */
-.btn:disabled{ cursor: not-allowed; }
+#consult .btn:disabled{ cursor: not-allowed; }
 #consult .btn.primary:disabled{
   background: var(--rule);
   color: var(--muted);
@@ -160,28 +150,16 @@
 #consult .actions{ display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 #consult .actions .btn.primary{ flex: 1 1 auto; }
 @media (min-width: 560px){#consult .actions .btn.primary{ flex: 0 1 auto; min-width: 200px; }}
-#consult /* ---- slots ------------------------------------------------------------- */
-.slots{ display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+#consult .slots{ display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
 #consult .slot{ display: grid; gap: 2px; }
 #consult .slot .day{ font-size: 12.5px; color: var(--muted); }
 #consult .slot .hour{ font-size: 17px; font-weight: 600; letter-spacing: -.02em; }
-#consult /* ---- confirmation ------------------------------------------------------ */
-[data-confirm][hidden]{ display: none; }
-#consult /* ============================ OPTION 5 — THE CARD ========================= */
-:root{
-  /* RHRLI locked palette (Joe, 2026-07-17): navy #122349, deep blue #1b3498,
-     warm ivory #f4f0eb, gold #f0b429. The template shipped in a demo lilac;
-     these are the client's real colours and every rule below reads the tokens,
-     so retheming is this block and nothing else.
-
-     Gold is a MARKER, never type: #f0b429 on ivory is ~1.8:1 and fails even the
-     large-text bar. It carries selected borders, the active progress tick and
-     badge fills (with navy on top). Emphasis type uses deep blue instead. */
+#consult [data-confirm][hidden]{ display: none; }
+#consult{
   --ground:#F4F0EB; --panel:#FFFFFF; --field-bg:#FFFFFF;
   --ink:#122349; --muted:#5A6478;
   --rule:#E2DDD5; --rule-strong:#9AA0AE; --placeholder:#7C8494;
-  --plum:#122349; --plum-deep:#0C1730; --orange:#F0B429;
-  --accent-text:#1B3498;
+  --plum:#122349; --plum-deep:#0C1730; --orange:#F0B429; --accent-text:#1B3498;
   --signal:#122349; --signal-hover:#1B3498; --on-signal:#FFFFFF;
   --ok:#1B3498; --danger:#B3261E; --focus:#1B3498;
   --field-radius:8px; --btn-radius:8px;
@@ -196,8 +174,7 @@
 @media (max-width:640px){#consult .mast-meta .home{display:none;}}
 #consult .shell{display:grid;grid-template-columns:1fr;max-width:1400px;margin:0 auto;gap:0;}
 @media (min-width:1040px){#consult .shell{grid-template-columns:minmax(0,1fr) minmax(430px,.88fr);align-items:start;}}
-#consult /* --- left: pitch + card --- */
-.pitch{padding:20px 20px 44px;}
+#consult .pitch{padding:20px 20px 44px;}
 @media (min-width:1040px){#consult .pitch{padding:24px 44px 72px 56px;position:sticky;top:0;}}
 #consult h1{
   font-size:clamp(2.5rem,7vw,4.3rem);line-height:.96;letter-spacing:-.05em;font-weight:800;
@@ -206,12 +183,7 @@
 #consult h1 em{font-style:normal;color:var(--accent-text);}
 #consult .lede{margin-top:20px;max-width:44ch;font-size:clamp(1rem,2.1vw,1.14rem);line-height:1.52;color:var(--muted);font-weight:500;}
 #consult .lede b{color:var(--ink);font-weight:700;}
-#consult /* the card */
-
-@media (prefers-reduced-motion:no-preference){
-  
-  @keyframes land{from{opacity:0;transform:rotate(-5deg) translateY(26px) scale(.96);}}
-}
+@media (prefers-reduced-motion:no-preference){@keyframes land{from{opacity:0;transform:rotate(-5deg) translateY(26px) scale(.96);}}}
 #consult .arow{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--rule);}
 #consult .arow:last-child{border-bottom:0;}
 #consult .arow .lbl{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
@@ -226,8 +198,7 @@
 #consult .aside svg{width:16px;height:16px;flex:none;margin-top:3px;color:var(--orange);}
 #consult .aside p{font-size:13.5px;line-height:1.55;color:var(--muted);font-weight:500;}
 #consult .aside p b{color:var(--ink);font-weight:700;}
-#consult /* --- right: form --- */
-.formwrap{padding:0 12px 44px;}
+#consult .formwrap{padding:0 12px 44px;}
 @media (min-width:1040px){#consult .formwrap{padding:24px 56px 72px 0;}}
 #consult .sheet{background:var(--panel);border-radius:18px;padding:28px 20px 34px;box-shadow:0 2px 0 rgba(26,18,51,.05);}
 @media (min-width:560px){#consult .sheet{padding:34px 34px 40px;}}
@@ -260,18 +231,9 @@
 #consult .done h2{font-size:2rem;line-height:1.02;letter-spacing:-.05em;font-weight:800;margin-bottom:13px;}
 #consult .done p{font-size:15px;line-height:1.58;color:var(--muted);max-width:42ch;font-weight:500;}
 #consult .done p b{color:var(--ink);font-weight:700;}
-#consult /* ============ FIVE PRACTICE PAGES — 5 STEPS, #consult 10-STAGE CHART AT STEP 2 =====
-   Left column carries the practice: a statement, #consult photos, #consult the doctor, #consult the
-   address and a call option. Five compositions of the same content, #consult each with
-   its own statement. Right column is one shared five-step form.
-   Photo frames are slots: an unset or unreachable src falls back to a labelled
-   placeholder rather than a broken image, #consult so the page never looks defective
-   before a client has supplied anything.
-   ========================================================================= */
-.pitch[hidden]{display:none;}
+#consult .pitch[hidden]{display:none;}
 #consult .pitch h1{text-wrap:balance;}
-#consult /* ---- step 2: the ten stages ---- */
-.scale-head{
+#consult .scale-head{
   display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
   margin:18px 0 10px;padding-bottom:8px;border-bottom:1px solid var(--rule);
 }
@@ -306,8 +268,7 @@
 #consult .scale-unsure b{font-size:14.5px;font-weight:700;letter-spacing:-.02em;}
 #consult .scale-unsure span{font-size:12.5px;color:var(--muted);line-height:1.45;font-weight:500;}
 #consult .step-hint{margin-top:12px;font-size:12.5px;line-height:1.5;color:var(--muted);font-weight:500;}
-#consult /* ---- format step ---- */
-.formats{display:grid;gap:10px;}
+#consult .formats{display:grid;gap:10px;}
 @media (min-width:520px){#consult .formats{grid-template-columns:1fr 1fr;}}
 #consult .formats [data-choice]{display:grid;gap:6px;align-content:start;padding:17px 17px 15px;}
 #consult .formats .ft{font-size:17px;font-weight:800;letter-spacing:-.03em;}
@@ -318,12 +279,10 @@
 }
 #consult .formats .fbadge.alt{color:#0C6B5C;background:#E6F4F1;}
 #consult .formats [data-choice][aria-pressed="true"] .fbadge{background:var(--orange);color:var(--ink);}
-#consult .formats [data-choice][aria-pressed="true"] .fbadge.alt{background:var(--orange);color:var(--ink);}
-#consult /* a tick past the active total belongs to a step this path skips */
-.steps [data-tick][data-state="unused"]{display:none;}
+#consult .formats [data-choice][aria-pressed="true"] .fbadge.alt{background:var(--orange);color:#fff;}
+#consult .steps [data-tick][data-state="unused"]{display:none;}
 #consult [data-format="virtual"] [data-when-inperson]{display:none;}
-#consult /* ---- left column components ---- */
-.eyebrow{font-size:11.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--plum);font-weight:800;}
+#consult .eyebrow{font-size:11.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--plum);font-weight:800;}
 #consult .statement{margin-top:16px;text-wrap:balance;max-width:26ch;font-size:clamp(1.9rem,4.6vw,2.9rem);line-height:1.02;letter-spacing:-.048em;font-weight:800;}
 #consult .statement em{font-style:normal;color:var(--accent-text);}
 #consult .saystill{margin-top:16px;max-width:46ch;font-size:15.5px;line-height:1.55;color:var(--muted);font-weight:500;}
@@ -372,13 +331,11 @@
   display:inline-flex;align-items:center;gap:9px;white-space:nowrap;
 }
 #consult .callnote a:hover{color:var(--orange);}
-#consult .photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
 #consult .callnote svg{width:17px;height:17px;}
 #consult .callnote.quiet{background:#fff;color:var(--ink);border:1px solid var(--rule);}
 #consult .callnote.quiet a{color:var(--plum);}
 #consult .smallprint{margin-top:16px;max-width:48ch;font-size:11.5px;line-height:1.55;color:var(--rule-strong);font-weight:500;}
-#consult /* ---- verification gate ---- */
-.verify[hidden]{display:none;}
+#consult .verify[hidden]{display:none;}
 #consult .otp{display:flex;gap:10px;margin-top:20px;}
 #consult .otp input{
   width:100%;max-width:66px;aspect-ratio:1;text-align:center;
@@ -400,3 +357,6 @@
 #consult .otp-demo code{font-family:ui-monospace,monospace;font-size:12px;}
 #consult .otp-demo[hidden]{display:none;}
 #consult .consent p a{font-weight:600;}
+@media (max-width:760px){}
+#consult .photo img{width:100%;height:100%;object-fit:cover;display:block;}
+
