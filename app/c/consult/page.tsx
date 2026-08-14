@@ -20,7 +20,7 @@ const PHONE_RAW = '+15162102369'
 export const metadata: Metadata = {
   title: `Book a consultation | ${PRACTICE}`,
   description:
-    'Book a one-hour hair restoration evaluation in Jericho or by video. Density measured, photographed and written up the same day. Nothing is quoted, scheduled or sold at the appointment.',
+    'Book a one-hour consultation with Dr. Barsoumian at Robotic Hair Restoration of Long Island. In person in Jericho or by video, Monday to Friday and select Saturdays.',
   robots: { index: false, follow: false },
   openGraph: {},
   twitter: {},
@@ -47,8 +47,7 @@ export default function ConsultPage() {
           </h1>
           <p className="saystill">
             Dr. Barsoumian keeps six. <b>Your plan gets built around the person you’re becoming</b>,
-            not around the one machine in the room — which is the whole reason the consult starts
-            with measuring rather than recommending.
+            not around the one machine in the room.
           </p>
 
           {/* Practice photographs supplied by RHRLI 2026-08-14. No before/after
@@ -69,13 +68,13 @@ export default function ConsultPage() {
 
           <dl className="visit">
             <div>
-              <dt>Where</dt>
+              <dt><svg className="vicon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 18s6-5.2 6-9.4A6 6 0 0 0 4 8.6C4 12.8 10 18 10 18Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/><circle cx="10" cy="8.4" r="2.2" stroke="currentColor" strokeWidth="1.6"/></svg>Where</dt>
               <dd>{ADDRESS}<small>{CITY}</small></dd>
             </div>
             <div>
-              <dt>When</dt>
+              <dt><svg className="vicon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="7.2" stroke="currentColor" strokeWidth="1.6"/><path d="M10 5.8V10l3 1.8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>When</dt>
               <dd>Monday to Friday, and select Saturdays
-                <small>Virtual or in person. Nothing is quoted, scheduled or sold at the consult.</small>
+                <small>One hour, in person or by video.</small>
               </dd>
             </div>
           </dl>

@@ -202,7 +202,7 @@ export default function ConsultFunnel() {
           <h2>You’re booked.</h2>
           <p>
             A confirmation is on its way to <b>{v.email}</b>, and a text reminder lands the day before.
-            Bring nothing. Mention any medication affecting circulation or clotting at reception.
+We’ll see you then.
           </p>
           <div className="receipt">
             <div><span>Name</span><b>{v.first_name} {v.last_name}</b></div>
@@ -299,7 +299,7 @@ export default function ConsultFunnel() {
               <h2 className="step-title">Which of these is closest?</h2>
               <p className="step-note">
                 Both clinical scales, side by side. <b>Pick the nearest one</b>, or say you are not sure.
-                It sets up the camera. The reading at the appointment is the number that counts.
+                It only tells the office what to prepare for.
               </p>
 
               <p className="scale-head"><b>Norwood</b><span>most often used for men</span></p>
@@ -322,7 +322,7 @@ export default function ConsultFunnel() {
                       aria-pressed={v.pattern === 'unsure'}
                       onClick={() => { set('pattern', 'unsure'); set('pattern_label', 'Not sure') }}>
                 <b>I’m not sure</b>
-                <span>Have all four zones mapped and decide nothing in advance. This is a normal answer.</span>
+                <span>You can work it out with Dr. Barsoumian at the consult. This is a normal answer.</span>
               </button>
             </div>
           )}
@@ -348,15 +348,17 @@ export default function ConsultFunnel() {
               <div className="formats">
                 <button type="button" data-choice="in-person" aria-pressed={v.format === 'in-person'}
                         onClick={() => { set('format', 'in-person'); set('format_label', 'In person') }}>
+                  <svg className="ficon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 18s6-5.2 6-9.4A6 6 0 0 0 4 8.6C4 12.8 10 18 10 18Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/><circle cx="10" cy="8.4" r="2.2" stroke="currentColor" strokeWidth="1.6"/></svg>
                   <span className="ft">In person</span>
-                  <span className="fs">Density counted under magnification and photographed under standardised light, so the reading is a measurement rather than an estimate.</span>
-                  <span className="fbadge">Includes the instrument reading</span>
+                  <span className="fs">At the Jericho office, 366 North Broadway, with Dr. Barsoumian.</span>
+                  <span className="fbadge">60 minutes</span>
                 </button>
                 <button type="button" data-choice="virtual" aria-pressed={v.format === 'virtual'}
                         onClick={() => { set('format', 'virtual'); set('format_label', 'Virtual') }}>
+                  <svg className="ficon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="2" y="5.5" width="11" height="9" rx="2" stroke="currentColor" strokeWidth="1.6"/><path d="m13 9.5 5-2.6v6.2l-5-2.6z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/></svg>
                   <span className="ft">Virtual</span>
-                  <span className="fs">The full hour by video, wherever you are, with the same written summary at the end and a clear next step.</span>
-                  <span className="fbadge alt">No travel, evenings available</span>
+                  <span className="fs">By video, wherever you are, with Dr. Barsoumian.</span>
+                  <span className="fbadge alt">60 minutes, no travel</span>
                 </button>
               </div>
               <p className="step-hint">Booking one does not commit you to the other. People move between the two all the time.</p>
@@ -367,8 +369,8 @@ export default function ConsultFunnel() {
             <div>
               <h2 className="step-title">Pick your time.</h2>
               <p className="step-note">
-                <b>{v.format === 'virtual' ? 'Virtual' : 'In-person'}</b> consults run Monday to
-                Friday and select Saturdays. Move it or cancel it any time, at no cost.
+                One hour with Dr. Barsoumian, <b>{v.format === 'virtual' ? 'by video' : 'in Jericho'}</b>.
+                Consults run Monday to Friday and select Saturdays.
               </p>
               {slotsError && <p className="otp-msg" role="alert">{slotsError}</p>}
               {!slots && !slotsError && <p className="step-hint">Loading live availability…</p>}
@@ -387,7 +389,6 @@ export default function ConsultFunnel() {
                   ))}
                 </div>
               )}
-              <p className="legal">Evaluations are diagnostic. No procedure is scheduled, quoted or sold at this appointment.</p>
             </div>
           )}
 
