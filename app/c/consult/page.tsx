@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import ConsultFunnel from '@/components/consult/ConsultFunnel'
+import Wordmark from '@/components/consult/Wordmark'
 import './consult.css'
 
 /* Practice facts below are read from the GHL location record for
@@ -37,9 +38,7 @@ export default function ConsultPage() {
 
       <header className="masthead">
         <a className="mark" href="https://www.rhrli.com/" aria-label={PRACTICE}>
-          {/* The wordmark's paths are fill="var(--fill-0, white)" — it defaults to
-              white and would be invisible on the ivory ground without this. */}
-          <img src="/rhrli-wordmark.svg" alt={PRACTICE} className="wordmark" />
+          <Wordmark className="wordmark" />
         </a>
         <div className="mast-meta">
           {/* DniSwap is already mounted in the root layout and rewrites this

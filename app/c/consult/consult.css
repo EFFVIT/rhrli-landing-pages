@@ -369,8 +369,8 @@
 #consult .vicon{width:15px;height:15px;color:var(--plum);flex:none;}
 
 /* wordmark + footer */
-#consult .mark{display:inline-flex;align-items:center;--fill-0:var(--ink);}
-#consult .wordmark{width:clamp(180px,26vw,260px);height:auto;}
+#consult .mark{display:inline-flex;align-items:center;color:var(--ink);}
+#consult .wordmark{width:clamp(168px,24vw,232px);height:auto;display:block;}
 #consult .consult-footer{
   margin-top:8px;background:var(--plum-deep);color:rgba(255,255,255,.62);
   text-align:center;padding:34px 20px 26px;font-size:13px;line-height:1.6;
