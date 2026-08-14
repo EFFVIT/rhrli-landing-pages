@@ -89,10 +89,6 @@ export default function ConsultPage() {
               {PHONE_DISPLAY}
             </a>
           </div>
-          <p className="smallprint">
-            Photographs are of the practice. No patient is identifiable and no before-and-after
-            imagery appears on this page.
-          </p>
         </section>
 
         <section className="formwrap" id="consult-book">
