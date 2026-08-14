@@ -48,19 +48,19 @@ export default function ConsultPage() {
             under standardised light, and written up the same day for you to take with you.
           </p>
 
-          {/* Photo slots. Client supplies; an unset file falls back to a labelled
-              frame rather than a broken image. No patient imagery on this page. */}
+          {/* Practice photographs supplied by RHRLI 2026-08-14. No before/after
+              and no identifiable patient: reception, the ARTAS suite in use
+              (patient fully draped, face not in frame), and the lounge. */}
           <div className="photos three">
             {[
-              ['exterior', 'Exterior'],
-              ['consult-room', 'Consult room'],
-              ['reception', 'Reception'],
-            ].map(([file, slot]) => (
-              /* The frame renders no image element until the practice supplies a
-                 file. Pointing a source at a missing asset shows the same
-                 placeholder but logs a 404 per slot, which fails the fleet's
-                 console-clean verification gate for a non-defect. */
-              <figure className="photo" data-slot={slot} data-empty="" key={file} />
+              ['practice-reception', 'The reception desk at 366 North Broadway'],
+              ['practice-procedure', 'The ARTAS iXi suite during a procedure'],
+              ['practice-lounge', 'The patient lounge'],
+            ].map(([file, alt]) => (
+              <figure className="photo" key={file}>
+                <img src={`/consult/${file}.webp`} alt={alt} width={900} height={675}
+                     loading="lazy" decoding="async" />
+              </figure>
             ))}
           </div>
 
@@ -88,7 +88,8 @@ export default function ConsultPage() {
             </a>
           </div>
           <p className="smallprint">
-            Photographs are of the practice. No patient imagery of any kind appears on this page.
+            Photographs are of the practice. No patient is identifiable and no before-and-after
+            imagery appears on this page.
           </p>
         </section>
 
