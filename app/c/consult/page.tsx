@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import ConsultFunnel from '@/components/consult/ConsultFunnel'
 import Wordmark from '@/components/consult/Wordmark'
+import GaTag from '@/components/consult/GaTag'
 import './consult.css'
 
 /* Practice facts below are read from the GHL location record for
@@ -34,6 +35,7 @@ export const metadata: Metadata = {
 export default function ConsultPage() {
   return (
     <div id="consult">
+      <GaTag />
       <a className="skip" href="#consult-book">Skip to the booking form</a>
 
       <header className="masthead">

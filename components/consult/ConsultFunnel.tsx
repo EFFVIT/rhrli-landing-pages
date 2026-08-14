@@ -15,6 +15,7 @@
    capture and does not fork the shared hook.
    ========================================================================== */
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { trackBookingComplete } from './GaTag'
 
 const TRACKED = [
   'gclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content',
@@ -179,7 +180,7 @@ export default function ConsultFunnel() {
         }),
       })
       const d = await r.json()
-      if (r.ok && d.booked) return setGate('done')
+      if (r.ok && d.booked) { trackBookingComplete(); return setGate('done') }
       setVErr(d?.message || 'That code did not match. Check the text and try again.')
       setCode(['', '', '', '']); otpRefs.current[0]?.focus()
     } catch {
