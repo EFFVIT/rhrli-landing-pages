@@ -5,10 +5,10 @@
 
    Five steps: contact, closest match, about you, format, time.
 
-   No office step: the GHL location record holds one address (366 North
-   Broadway, Jericho). Inventing office rows to reach six steps would put
-   addresses on a live page that no system of record contains. The step stays in
-   the template for multi-office clients.
+   No office step: RHRLI is a single location (167 Froehlich Farm Blvd,
+   Woodbury NY 11797, verified from their own schema.org markup -- the GHL
+   location record is stale and says Jericho). The step stays in the template
+   for multi-office clients.
 
    Attribution is captured here rather than via the shared useGclid hook, which
    only handles `gclid`. This page needs all ten params, so it keeps its own
@@ -19,6 +19,9 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 const TRACKED = [
   'gclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content',
   'fbclid', 'msclkid', 'wbraid', 'gbraid',
+  /* Google Ads ValueTrack. Some accounts pass ?keyword={keyword} rather than
+     utm_term, so both are captured. See the compliance note in the README. */
+  'keyword', 'matchtype', 'campaignid', 'adgroupid',
 ] as const
 
 const NORWOOD = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']
@@ -94,7 +97,6 @@ export default function ConsultFunnel() {
     if ((v.first_name || '').trim().length < 2) e.first_name = 'Enter at least two characters.'
     if ((v.last_name || '').trim().length < 2) e.last_name = 'Enter at least two characters.'
     if (!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(v.email || '')) e.email = 'That address is missing an @ or a domain.'
-    if (!/^\d{5}$/.test(digits(v.zip || ''))) e.zip = 'Five digits, please.'
     if (digits(v.phone || '').length !== 10) e.phone = 'A US number is 10 digits.'
     setErrors(e)
     return Object.keys(e).length === 0
@@ -103,7 +105,7 @@ export default function ConsultFunnel() {
   const ready = useMemo(() => {
     const id = STEPS[step].id
     if (id === 'contact') {
-      return ['first_name', 'last_name', 'email', 'zip', 'phone'].every((k) => (v[k] || '').trim()) && consent
+      return ['first_name', 'last_name', 'email', 'phone'].every((k) => (v[k] || '').trim()) && consent
     }
     if (id === 'pattern') return !!v.pattern
     if (id === 'about') return !!v.age_range && !!v.prior_procedure
@@ -144,7 +146,7 @@ export default function ConsultFunnel() {
         body: JSON.stringify({
           action: 'send', phone: digits(v.phone), practice: PRACTICE,
           first_name: v.first_name, last_name: v.last_name, email: v.email,
-          zip: v.zip, format: v.format,
+          format: v.format,
         }),
       })
       const d = await r.json()
@@ -264,14 +266,13 @@ We’ll see you then.
           {STEPS[step].id === 'contact' && (
             <div>
               <h2 className="step-title">Schedule your consult.</h2>
-              <p className="step-note">Five fields. No health question on this screen, and nothing typed here reaches an advertising platform.</p>
+              <p className="step-note">Four fields. No health question on this screen, and nothing typed here reaches an advertising platform.</p>
               <div className="stack">
                 <div className="row two">
-                  <Field id="first_name" label="First name" v={v} set={set} errors={errors} autoComplete="given-name" placeholder="Steven" />
-                  <Field id="last_name" label="Last name" v={v} set={set} errors={errors} autoComplete="family-name" placeholder="Santamali" />
+                  <Field id="first_name" label="First name" v={v} set={set} errors={errors} autoComplete="given-name" placeholder="First Name" />
+                  <Field id="last_name" label="Last name" v={v} set={set} errors={errors} autoComplete="family-name" placeholder="Last Name" />
                 </div>
                 <Field id="email" label="Email" v={v} set={set} errors={errors} type="email" autoComplete="email" placeholder="you@example.com" />
-                <Field id="zip" label="ZIP" v={v} set={set} errors={errors} inputMode="numeric" maxLength={5} autoComplete="postal-code" placeholder="11753" />
                 <Field id="phone" label="Mobile" v={v} set={set} errors={errors} type="tel" inputMode="tel"
                        autoComplete="tel" placeholder="(516) 555-0142" transform={fmtPhone} />
               </div>
@@ -350,7 +351,7 @@ We’ll see you then.
                         onClick={() => { set('format', 'in-person'); set('format_label', 'In person') }}>
                   <svg className="ficon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 18s6-5.2 6-9.4A6 6 0 0 0 4 8.6C4 12.8 10 18 10 18Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/><circle cx="10" cy="8.4" r="2.2" stroke="currentColor" strokeWidth="1.6"/></svg>
                   <span className="ft">In person</span>
-                  <span className="fs">At the Jericho office, 366 North Broadway.</span>
+                  <span className="fs">At the Woodbury office, 167 Froehlich Farm Blvd.</span>
                   <span className="fbadge">60 minutes</span>
                 </button>
                 <button type="button" data-choice="virtual" aria-pressed={v.format === 'virtual'}
@@ -369,7 +370,7 @@ We’ll see you then.
             <div>
               <h2 className="step-title">Pick your time.</h2>
               <p className="step-note">
-                One hour, <b>{v.format === 'virtual' ? 'by video' : 'in Jericho'}</b>.
+                One hour, <b>{v.format === 'virtual' ? 'by video' : 'in Woodbury'}</b>.
                 Consults run Monday to Friday and select Saturdays.
               </p>
               {slotsError && <p className="otp-msg" role="alert">{slotsError}</p>}

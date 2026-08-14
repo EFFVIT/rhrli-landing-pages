@@ -9,8 +9,12 @@ import './consult.css'
    credential line is the first thing a visitor checks. Add them once the
    practice confirms them in writing. */
 const PRACTICE = 'Robotic Hair Restoration of Long Island'
-const ADDRESS = '366 North Broadway'
-const CITY = 'Jericho, NY 11753'
+/* Verified 2026-08-14 from RHRLI's own schema.org markup on rhrli.com, which
+   agrees with the live sibling LP footer. The GHL location record still says
+   366 North Broadway, Jericho NY 11753 -- that record is WRONG and anything
+   else reading it inherits the error. */
+const ADDRESS = '167 Froehlich Farm Blvd'
+const CITY = 'Woodbury, NY 11797'
 /* DNI pool default. DniSwap only rewrites numbers matching 5162102369, so the
    practice's static GHL line would display untracked and never swap. Verified
    live: no gclid -> 516-210-2369; with a gclid -> a leased pool number. */
@@ -20,7 +24,7 @@ const PHONE_RAW = '+15162102369'
 export const metadata: Metadata = {
   title: `Book a consultation | ${PRACTICE}`,
   description:
-    'Book a one-hour consultation at Robotic Hair Restoration of Long Island. In person in Jericho or by video, Monday to Friday and select Saturdays.',
+    'Book a one-hour consultation at Robotic Hair Restoration of Long Island. In person in Woodbury or by video, Monday to Friday and select Saturdays.',
   robots: { index: false, follow: false },
   openGraph: {},
   twitter: {},
