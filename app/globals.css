@@ -147,3 +147,16 @@ button { font-family: inherit; }
   .logo-wordmark { display: none; }
   .steps-grid { grid-template-columns: 1fr; }
 }
+
+/* ── Mobile copy left-align (requested by Joe 2026-08-14) ──
+   Copy reads left-aligned on phones instead of centred. Targets text tags
+   only, so buttons, star ratings, step icons and other controls keep the
+   alignment they were designed with. Header nav is exempt. */
+@media (max-width: 767px) {
+  p, h1, h2, h3, h4, h5, h6, li, blockquote, figcaption {
+    text-align: left !important;
+  }
+  header p, header h1, header h2, header h3, header h4, header h5, header h6 {
+    text-align: center !important;
+  }
+}

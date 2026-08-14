@@ -32,7 +32,11 @@ export default function ConsultPage() {
       <a className="skip" href="#consult-book">Skip to the booking form</a>
 
       <header className="masthead">
-        <div className="mark">{PRACTICE}</div>
+        <a className="mark" href="https://www.rhrli.com/" aria-label={PRACTICE}>
+          {/* The wordmark's paths are fill="var(--fill-0, white)" — it defaults to
+              white and would be invisible on the ivory ground without this. */}
+          <img src="/rhrli-wordmark.svg" alt={PRACTICE} className="wordmark" />
+        </a>
         <div className="mast-meta">
           {/* DniSwap is already mounted in the root layout and rewrites this
               number and its tel: href when a gclid session is present. */}
@@ -95,6 +99,23 @@ export default function ConsultPage() {
           <ConsultFunnel />
         </section>
       </main>
+
+      <footer className="consult-footer">
+        <p className="cf-name">{PRACTICE}</p>
+        <p className="cf-line">
+          {ADDRESS}, {CITY} &nbsp;·&nbsp; <a href={`tel:${PHONE_RAW}`}>{PHONE_DISPLAY}</a>
+        </p>
+        <p className="cf-disc">
+          Individual results vary. This content is for educational purposes only and is not medical
+          advice. Consult a qualified physician before pursuing any medical procedure.
+        </p>
+        <nav className="cf-links">
+          <span>© {new Date().getFullYear()} {PRACTICE}</span>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/cookie-policy/">Cookie Policy</a>
+          <a href="https://www.rhrli.com/terms-of-service/">Terms of Service</a>
+        </nav>
+      </footer>
     </div>
   )
 }

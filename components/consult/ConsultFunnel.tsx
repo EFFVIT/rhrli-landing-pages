@@ -284,7 +284,7 @@ We’ll see you then.
                   {PRACTICE} uses text messages to confirm and manage online appointments. To complete
                   scheduling, you agree to receive reminders about appointments, transactions, special
                   offers, exclusive event invites, and occasional promotions. By submitting this form, you
-                  agree to {PRACTICE}’s <a href="/terms-of-service">Terms of Use</a> and consent to receive
+                  agree to {PRACTICE}’s <a href="https://www.rhrli.com/terms-of-service/">Terms of Use</a> and consent to receive
                   calls, emails, and text messages from {PRACTICE}, which may be live, automated, or
                   prerecorded. You can opt out at any time by texting “STOP.” Consent is not required to
                   receive services. Standard message and data rates may apply. Please see our{' '}
