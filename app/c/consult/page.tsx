@@ -20,7 +20,7 @@ const PHONE_RAW = '+15162102369'
 export const metadata: Metadata = {
   title: `Book a consultation | ${PRACTICE}`,
   description:
-    'Book a one-hour consultation with Dr. Barsoumian at Robotic Hair Restoration of Long Island. In person in Jericho or by video, Monday to Friday and select Saturdays.',
+    'Book a one-hour consultation at Robotic Hair Restoration of Long Island. In person in Jericho or by video, Monday to Friday and select Saturdays.',
   robots: { index: false, follow: false },
   openGraph: {},
   twitter: {},
