@@ -1,6 +1,11 @@
 import Script from 'next/script'
 import DniSwap from '@/components/DniSwap'
 import Fab from '@/components/fab/Fab'
+/* Lives under components/consult/ for historical reasons — it is now the
+   fleet-wide analytics tag, not a consult-only one. Left in place so the two
+   consult pages that already render it keep working; next/script dedupes on
+   the `ga4-src` / `ga4-config` ids, so rendering it here and there is safe. */
+import GaTag from '@/components/consult/GaTag'
 import './globals.css'
 
 const OG_IMAGE = 'https://vitalitymmg.com/wp-content/uploads/2026/06/rhrli-og-featured.png'
@@ -28,26 +33,28 @@ export const metadata = {
     return (
       <html lang="en">
         <head>
-          <Script
-            id="gtm-script"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              /* HEALTH-INTENT ROUTE EXCLUSION (H-26 / §6 failure mode 7).
-                 /c/consult collects a hair-loss pattern selection and prior-procedure
-                 answer as FIRST-PARTY DOM, not inside a cross-origin GHL iframe. This
-                 container was measured live on 2026-08-14 loading GA4, legacy UA,
-                 DoubleClick remarketing and Microsoft Clarity session recording — and
-                 Clarity can read first-party inputs. On the iframe pages it cannot; that
-                 is an accident of the embed, not a control. So GTM does not load here.
-                 The <noscript> fallback below is deliberately left alone: with JS off the
-                 funnel cannot run at all, so no health-intent input exists to leak. */
-              __html: `if(!/^\\/c\\/consult(\\/|$)/.test(location.pathname)){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-WP5S55H');}`,
-            }}
-          />
+          {/* GTM-WP5S55H REMOVED FLEET-WIDE ON THE LANDING PAGES, 2026-08-15, at Joe's
+              direction. Measured live the same day, that container delivered Microsoft
+              Clarity session recording, the Meta pixel, Bing UET and a DoubleClick
+              view-through remarketing beacon onto every route here, including
+              /c/evaluation, which asks a prospective patient for their name, phone and
+              hair-loss situation. Neither Microsoft nor Meta will sign a BAA.
+
+              The container was NOT edited, and must not be: rhrli.com — the client's
+              main website — serves the SAME GTM-WP5S55H. Stripping tags inside the
+              container would have silently removed the client's own analytics and
+              retargeting from their whole site. The landing pages are ours to change;
+              the container is not. Scope is the LP fleet only.
+
+              GA4 is retained per Joe, via <GaTag /> below, which loads it directly with
+              allow_google_signals:false — so the pageview cannot be joined to a signed-in
+              Google profile and turned back into a remarketing audience. Removing the
+              beacon without that flag would have been cosmetic (H-32).
+
+              Verified before removal: NO Google Ads conversion beacon fires anywhere on
+              this fleet — every AW- hit was /pagead/viewthroughconversion (remarketing),
+              never /pagead/conversion. Conversion tracking runs through GHL/RootLogic, so
+              nothing here feeds Smart Bidding. The <noscript> iframe went with it. */}
           <Script
             id="ghl-chat-widget"
             strategy="afterInteractive"
@@ -57,16 +64,9 @@ export const metadata = {
           />
         </head>
         <body>
+          <GaTag />
           <DniSwap />
           <Fab client="rhrli" />
-          <noscript>
-            <iframe
-              src="https://www.googletagmanager.com/ns.html?id=GTM-WP5S55H"
-              height="0"
-              width="0"
-              style={{ display: 'none', visibility: 'hidden' }}
-            />
-          </noscript>
           {children}
         </body>
       </html>
