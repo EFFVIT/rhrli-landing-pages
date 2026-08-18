@@ -1,4 +1,5 @@
 import Script from 'next/script'
+import GaTag from '@/components/GaTag'
 import './globals.css'
 
 const OG_IMAGE = 'https://vitalitymmg.com/wp-content/uploads/2026/06/rhrli-og-featured.png'
@@ -27,17 +28,6 @@ export const metadata = {
       <html lang="en">
         <head>
           <Script
-            id="gtm-script"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-WP5S55H');`,
-            }}
-          />
-          <Script
             id="ghl-chat-widget"
             strategy="afterInteractive"
             dangerouslySetInnerHTML={{
@@ -46,14 +36,7 @@ export const metadata = {
           />
         </head>
         <body>
-          <noscript>
-            <iframe
-              src="https://www.googletagmanager.com/ns.html?id=GTM-WP5S55H"
-              height="0"
-              width="0"
-              style={{ display: 'none', visibility: 'hidden' }}
-            />
-          </noscript>
+          <GaTag />
           {children}
         </body>
       </html>
